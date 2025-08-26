@@ -1,0 +1,68 @@
+XP Power (Ticker: XPP) - Ownership and Financial Analysis Report
+
+---
+
+**Ownership Information:**
+
+No information available on ownership for XP Power (XPP) in the provided data folder files.
+
+---
+
+**Financial Ratio Analysis:**  
+
+| Ratio Category        | Ratio                  | Value   | Threshold (Pass/Monitor/Fail)            | Outcome | Analysis Summary                                                                                                                 |
+|----------------------|------------------------|---------|-----------------------------------------|---------|---------------------------------------------------------------------------------------------------------------------------------|
+| **Valuation Ratios**   | P/E Ratio              | N/A     | <10.0 / 10.0-15.0 / >15.0              | N/A     | No P/E available due to negative or zero earnings indicating lack of profitability in the period; consistent with reported losses. |
+|                       | P/B Ratio              | 1.5%    | >1.5 / 3.0-1.5 / <3.0                   | FAIL    | Very low price-to-book suggesting market discounts book value heavily, indicative of investor concerns on asset quality or earnings. |
+|                       | P/S Ratio              | 1.2%    | >1.0 / 2.0-1.0 / <2.0                   | PASS    | Price to sales is reasonable, showing moderate valuation relative to revenue despite profitability challenges.                 |
+|                       | EV/EBITDA              | 9.9x    | <5.0 / 5.0-7.5 / >7.5                   | FAIL    | High EV/EBITDA multiple reflects depressed EBITDA margins and valuation risk.                                                  |
+|                       | EV/EBIT                | 23.5x   | <7.0 / 7.0-10.0 / >10.0                 | FAIL    | Even higher EV/EBIT multiple consistent with first half loss and steep operating margin decline.                                |
+|                       | EV/Revenue             | 1.4x    | >1.0 / 2.0-1.0 / <2.0                   | PASS    | Enterprise value relative to revenue is in an acceptable range, signaling some underlying asset support.                        |
+|                       | Price to FCF           | 59.5x   | >15.0 / 30.0-15.0 / <30.0               | PASS    | High price to free cash flow reflecting low free cash flow generation compared to market cap.                                   |
+|                       | FCF Yield              | 1.7%    | >10.0 / 6.0-10.0 / <6.0                 | FAIL    | Free cash flow yield is low, indicating weak cash flow generation compared to valuation.                                        |
+| **Profitability Ratios**| Gross Margin           | 41.4%   | >40.0 / 30.0-40.0 / <30.0               | PASS    | Gross margins held up well at above 40%, a positive in a challenging period.                                                    |
+|                       | Operating Margin       | 4.3%    | >15.0 / 5.0-15.0 / <5.0                 | FAIL    | Operating margin is critically low reflecting intensified cost pressures and lower profitability.                              |
+|                       | Net Margin             | -1.3%   | >5.0 / 0.0-5.0 / <0.0                   | FAIL    | Negative net margin consistent with reported statutory loss for H1 2025.                                                        |
+|                       | ROA                    | -0.7%   | >5.0 / 0.0-5.0 / <0.0                   | FAIL    | Negative returns on assets reflecting unprofitable operations.                                                                   |
+|                       | ROE                    | -1.6%   | >10.0 / 0.0-10.0 / <0.0                 | FAIL    | Negative equity returns indicating overall value destruction during the period.                                                 |
+|                       | ROCE                   | 4.3%    | >15.0 / 8.0-15.0 / <8.0                 | FAIL    | Return on capital employed is below acceptable thresholds indicating weak capital efficiency.                                   |
+| **Liquidity Ratios**    | Current Ratio          | 1.8%    | >1.5 / 1.0-1.5 / <1.0                   | PASS    | Current ratio above 1.5 signals reasonable short-term liquidity.                                                                 |
+|                       | Quick Ratio            | 1.1%    | >1.0 / 0.5-1.0 / <0.5                   | PASS    | Adequate liquidity excluding inventory, strong for operational resilience.                                                      |
+|                       | Cash Ratio             | 0.2%    | >0.5 / 0.2-0.5 / <0.2                   | FAIL    | Very low cash ratio highlights cash constraints, potentially riskier in adverse conditions.                                     |
+| **Leverage Ratios**     | Debt-to-Equity         | 0.4     | <0.5 / 0.5-1.0 / >1.0                   | PASS    | Moderate leverage with net debt reduced 44% from prior year, reflecting cautious financial management.                          |
+|                       | Debt Ratio             | 0.2%    | >0.3 / 0.5-0.3 / <0.5                   | FAIL    | Debt ratio is shown as percentage here but marked fail; possibly due to comparative benchmark mismatch or low asset base.       |
+|                       | Interest Coverage      | 1.5x    | >4.0 / 2.0-4.0 / <2.0                   | FAIL    | Low interest coverage ratio indicates weaker ability to service debt from operating earnings.                                  |
+|                       | Net Debt/EBITDA        | 1.8     | <2.5 / 2.5-3.5 / >3.5                   | PASS    | Net debt to EBITDA modest, reflecting manageable leverage despite earnings pressure.                                            |
+| **Efficiency Ratios**   | Asset Turnover         | 0.5x    | >1.0 / 0.5-1.0 / <0.5                   | MONITOR | Lower asset turnover indicates less efficient asset use; warrants monitoring in recovery phase.                                |
+|                       | Inventory Turnover     | 2.2x    | >4.0 / 2.0-4.0 / <2.0                   | MONITOR | Inventory management moderate; improvements needed to reduce working capital intensity.                                         |
+|                       | Receivables Turnover   | 6.8x    | >6.0 / 4.0-6.0 / <4.0                   | PASS    | Strong receivables turnover supports effective credit management and cash collection.                                           |
+|                       | Days Sales Outstanding | 54 days | <60.0 / 60.0-90.0 / >90.0               | PASS    | Good control on receivables days, beneficial for liquidity.                                                                     |
+| **Earnings Quality**    | Accruals Ratio         | -7.5%   | <10.0 / 10.0-20.0 / >20.0               | PASS    | Negative accruals ratio suggests earnings are cash backed, positive for earnings quality.                                       |
+|                       | EBITDA to FCF Conv.    | 13.6    | >70.0 / 40.0-70.0 / <40.0               | FAIL    | Very low conversion indicates significant cash flow challenges despite EBITDA generation.                                       |
+|                       | Adjusted vs Stat Gap   | 84.6    | <10.0 / 10.0-20.0 / >20.0               | FAIL    | Large gap indicates divergence between adjusted and statutory earnings, raising concerns about earnings quality and adjustments.|
+| **Asset Quality**       | Goodwill/Assets        | 17.7    | <30.0 / 30.0-50.0 / >50.0               | PASS    | Moderate goodwill relative to assets, not indicating excessive intangible risk.                                                 |
+|                       | Capex/Depreciation     | 1.4     | 0.8-1.2 / <0.8 or >1.2 / >1.5           | MONITOR | Slightly elevated capex indicates possible investment but above typical normalization.                                          |
+|                       | Working Capital        | £72.8m  | >0.0 / 10.0-0.0 / <10.0                 | PASS    | Positive working capital supports operational liquidity despite margin pressures.                                               |
+|                       | Tangible Book Value    | £48.2m  | >50.0 / 0.0-50.0 / <0.0                 | MONITOR | Just below preferred tangible book threshold suggesting slightly elevated intangible assets.                                    |
+| **Cash Flow Ratios**    | Operating Cash Flow    | 0.2%    | >0.5 / 0.2-0.5 / <0.2                   | FAIL    | Very weak operating cash flow relative to obligations raising liquidity concerns.                                               |
+|                       | Cash Conversion        | 9.9     | >1.0 / 0.8-1.0 / <0.8                   | PASS    | High cash conversion implies good efficiency in converting earnings to cash when positive cash flows exist.                     |
+|                       | Free Cash Flow         | £2.2m   | >0.0 / 5.0-0.0 / <5.0                   | PASS    | Positive free cash flow albeit small, offering some cushion to the balance sheet.                                               |
+
+---
+
+**Summary and Conclusion:**
+
+XP Power has faced a challenging first half of 2025 with revenue decline and sharply reduced profitability evidenced by operating and net margin compression into negative territory. Valuation multiples paint a mixed picture: while price-to-sales and EV to revenue remain reasonable, multiples involving earnings (EV/EBITDA, P/E) are elevated or not available due to lack of profits, signaling market caution.
+
+The liquidity and leverage metrics show prudent management of debt levels and reasonable short-term liquidity ratios, but cash availability (cash ratio) and interest coverage are weak, highlighting susceptibility in cash management and debt servicing if headwinds persist.
+
+Operational efficiency and asset utilization metrics warrant monitoring but have not materially deteriorated. Earnings quality shows concerning discrepancies between adjusted and statutory results and poor EBITDA to free cash flow conversion, cautioning on quality of reported profitability.
+
+In context, XP Power’s interim results reflect a business under pressure from market headwinds, with some operational resilience in gross margin and working capital management but profit conversion issues and cash flow constraints. The stock trades with mixed valuation signals, reflecting both underlying asset value and current operational challenges.
+
+For a forward-looking valuation or investment decision, additional detailed forecasts, scenario analyses, and deeper cash flow scrutiny are recommended. Key documents needed would be detailed management guidance or forecast models to assess recovery potential.
+
+---
+
+Report prepared by: Victoria Clarke  
+Date and Time: 2025-08-24 12:15 UK Time

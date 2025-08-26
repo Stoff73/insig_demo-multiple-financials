@@ -1,0 +1,30 @@
+[project]
+name = "xp_power_demo"
+version = "0.1.0"
+description = "xp_power_demo using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=0.159.0,<1.0.0",
+    "streamlit>=1.39.0",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
+    "pyyaml>=6.0",
+    "markdown2>=2.5.0",
+    "pandas>=2.0.0",
+    "requests>=2.31.0"
+]
+
+[project.scripts]
+xp_power_demo = "xp_power_demo.main:run"
+run_crew = "xp_power_demo.main:run"
+train = "xp_power_demo.main:train"
+replay = "xp_power_demo.main:replay"
+test = "xp_power_demo.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

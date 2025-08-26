@@ -1,0 +1,149 @@
+primary_ratios:
+  description:
+    You are analysing the {company} as specified by the user, looking at the data provided for 
+    the {company} with ticker {ticker}.
+    Read the {ticker}_agent_ratios.md file in the data/{ticker} folder
+    **DO NOT** read any *.pdf files, only look through *.md files
+  goal:
+    Your goal is to give an analysis on the information provided.
+    You are to analyse the outcomes from the {ticker}_agent_ratios.md files and give your 
+    expert view on wether or not these outcomes are material to the valuation of the company.
+    For this analysis, the focus is on the Valuation ratios as shown in the {ticker}_agent_ratios.md file.
+    Use the ratios and numbers as given in the {ticker}_agent_ratios.md file, do not change these or make up your own numbers.
+    Keep this short and Concise 
+    **Never** make up any data or add any information into the report that is not in the files provided 
+    Do not make anything up or fabricate any data 
+    Do not create any additional files, or output files, if there is information you deem important to output,  
+    place this in the output file specified.  
+    Do NOT browse the web or make external calls - use only the provided files.
+  expected_output: 
+    A formatted table containing the figures, analysis and any additional
+    information you deem necessary. 
+    The table must contain all the ratios and financials shown under the valuation ratios  
+    section of the {ticker}_agent_ratios.md file.
+    A paragraph summarising the analysis of each of the metrics in context of the company and the information provided. 
+    You must always provide a conclusion to your analysis.
+    Any additional information or documents required if anything is missing.
+    Sign off on the report with your name, {current_date} and {current_time}.
+  agent: victoria_clarke
+  output_file: output/{ticker}/{ticker}-valuation.md
+
+ownership_task:
+  description: 
+    You are analysing the {company} as specified by the user, looking at the data provided for 
+    the {company} with ticker {ticker}.
+    Read the {ticker}_ownership.md file in the data/{ticker} folder, if this does not exist, state that there is no information 
+    available on ownership in the output file.
+    **DO NOT** read any *.pdf files, only look through *.md files
+    For this task, look for files with any ownership details, such as results, notes to financials, etc...
+  goal:
+    Using the information provided, provide a ownership diagnostic matrix with the following
+      Insider Ownership %
+      Recent Insider transactions 
+      Ownership changes
+    Check if there has been any insider transactions on the open market 
+    Any cluster buying (e.g. 3+ insiders within weeks)
+    Any new director buys before appointment
+    Any option exercises and sells or any outright sells, any option grants. 
+    Keep this short and Concise 
+    **Never** make up any data or add any information into the report that is not in the files provided 
+    Do not make anything up or fabricate any data 
+    Do not create any additional files, or output files, if there is information you deem important to output,  
+    place this in the output file specified.  
+    Do NOT browse the web or make external calls - use only the provided files.
+  expected_output: 
+    A formatted table with the above requested metrics, analysis and any additional information you deem necessary
+    A paragraph summarising the analysis of each of the metrics in context of the company and the information provided. 
+    You must always provide a conclusion to your analysis.
+    Any additional information or documents required if anything is missing.
+    Sign off on the report with your name, {current_date} and {current_time}.
+  agent: victoria_clarke
+  output_file: output/{ticker}/{ticker}-ownership.md
+
+earnings_quality_task:
+  description: 
+    You are analysing the {company} as specified by the user, looking at the data provided for 
+    the {company} with ticker {ticker}.
+    Read the {ticker}_*.md and {ticker}_agent_ratios.md file in the data/{ticker} folder, if this does not exist, 
+    search the directory for the appropriate information.
+    Read through any other files that you deem important, in order to full-fill the goal,
+    and produce the expected output.
+    **DO NOT** read any *.pdf files, only look through *.md files
+    For this task, look for files with any ownership details, such as results, notes to financials, etc..
+  goal:
+    To assess whether reported profits are sustainable, repeatable, and cash-convertible or inflated 
+    Keep this short and Concise 
+    **Never** make up any data or add any information into the report that is not in the files provided 
+    Do not make anything up or fabricate any data 
+    Do not create any additional files, or output files, if there is information you deem important to output,  
+    place this in the output file specified.  
+    Do NOT browse the web or make external calls - use only the provided files.
+  expected_output: 
+    A table, showing all the metrics which you have used to asses the company, in line with the stated goal,
+    with sustainable, repeatable, cash-convertible or inflated verdict.
+    A paragraph summarising the analysis of each of the metrics in context of the company and the information provided.
+    You must always provide a conclusion to your analysis. 
+    Any additional information or documents required if anything is missing.
+    Sign off on the report with your name, {current_date} and {current_time}.
+  agent: daniel_osei
+  output_file: output/{ticker}/{ticker}-earning-quality.md
+
+balance_sheet_durability_task:
+  description: 
+    You are analysing the {company} as specified by the user, looking at the data provided for 
+    the {company} with ticker {ticker}.
+    Read the {ticker}_*.md and {ticker}_agent_ratios.md file in the data/{ticker} folder, if this does not exist, 
+    search the directory for the appropriate information.
+    Read through any other files that you deem important, in order to full-fill the goal,
+    and produce the expected output.
+    **DO NOT** read any *.pdf files, only look through *.md files
+    For this task, look for files with any ownership details, such as results, notes to financials, etc..
+  goal:
+    To determine whether the company has
+      Sufficient liquidity to operate and invest 
+      Sustainable leverage to manage downturns 
+      Low refinancing or default risk  
+      Transparent liabilities, including pensions and leases
+    Keep this short and Concise 
+    **Never** make up any data or add any information into the report that is not in the files provided 
+    Do not make anything up or fabricate any data 
+    Do not create any additional files, or output files, if there is information you deem important to output,  
+    place this in the output file specified.  
+    Do NOT browse the web or make external calls - use only the provided files.
+  expected_output: 
+    A table, showing all the metrics which you have used to asses the company, in line with the stated goal
+    A table, showing the metrics above and your assesment and verdict.
+    A paragraph summarising the analysis of each of the metrics in context of the company and the information provided. 
+    You must always provide a conclusion to your analysis. 
+    Any additional information or documents required if anything is missing.
+    Sign off on the report with your name, {current_date} and {current_time}.
+  agent: daniel_osei
+  output_file: output/{ticker}/{ticker}-balancesheet-durability.md
+
+decision_task:
+  description: 
+    You are analysing the {company} as specified by the user.
+    Read the following files in the output/{ticker} folder which contain all necessary information
+      {ticker}-balancesheet-durability.md
+      {ticker}-earning-quality.md
+      {ticker}-ownership.md
+      {ticker}-valuation.md
+  goal:
+    Highlight mispricing signals (valuation, sentiment, catalysts) or any other information you deem important
+    Red flags and required further work 
+    This is not a full investment memo. 
+    **Never** make up any data or add any information into the report that is not in the files provided 
+    Do not make anything up or fabricate any data 
+    Do not create any additional files, or output files, if there is information you deem important to output,  
+    place this in the output file specified.  
+    Do NOT browse the web or make external calls - use only the provided files.
+  expected_output: 
+    A 1-2 page report describing the reasons you came to a decision about the company, given the information presented in the initial_screening.md
+    document. 
+    Describe how you arrived at your decision in line with the given metrics.
+    You must always provide a conclusion to your analysis. 
+    Do **NOT** provide a recommendation, or any substance on what to do next. 
+    Any additional information or documents required if anything is missing.
+    Sign off on the report with your name, {current_date} and {current_time}.
+  agent: richard
+  output_file: output/{ticker}/{ticker}-decision.md

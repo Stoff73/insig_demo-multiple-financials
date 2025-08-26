@@ -1,0 +1,1 @@
+The required files for XP Power analysis (XPP-balance_sheet_durability.md, XPP-earnings_quality.md, XPP-ownership.md, XPP-valuation.md) are not accessible. Without access to these files, I am unable to conduct the deep analysis or prepare the detailed report per the criteria. Please provide the necessary files for me to proceed.

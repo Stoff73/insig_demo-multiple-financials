@@ -1,0 +1,5 @@
+## Responsibilities of the directors for the financial statements
+
+As explained more fully in the directors' responsibilities statement set out on page 14, the directors are responsible for the preparation of the financial statements and for being satisfied that they give a true and fair view, and for such internal control as the directors determine is necessary to enable the preparation of financial statements that are free from material misstatement, whether due to fraud or error.
+
+In preparing the financial statements, the directors are responsible for assessing the Group's and parent company's ability to continue as a going concern, disclosing, as applicable, matters related to going concern and using the going concern basis of accounting unless the directors either intend to liquidate the Group or the parent company or to cease operations, or have no realistic alternative but to do so.

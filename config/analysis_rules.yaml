@@ -1,0 +1,356 @@
+valuation:
+  ev_ebitda:
+    name: EV/EBITDA
+    description: Core operating cash flow before capital intensity
+    category: valuation
+    metric_type: ratio
+    thresholds:
+      pass:
+        operator: <
+        value: 5.0
+      monitor:
+        operator: between
+        min: 5.0
+        max: 7.5
+      fail:
+        operator: '>'
+        value: 7.5
+    notes: Unless growth/cyclic case
+    applies_to_tasks:
+    - primary_ratios
+    enabled: true
+  pe_ratio:
+    name: P/E Ratio
+    description: Earnings multiple
+    category: valuation
+    metric_type: ratio
+    thresholds:
+      pass:
+        operator: <
+        value: 10
+      monitor:
+        operator: between
+        min: 10
+        max: 15
+      fail:
+        operator: '>'
+        value: 15
+    notes: Unless secular growth
+    applies_to_tasks:
+    - primary_ratios
+    enabled: true
+  fcf_yield:
+    name: FCF Yield
+    description: Capital return potential (FCF/EV)
+    category: valuation
+    metric_type: percentage
+    thresholds:
+      pass:
+        operator: '>'
+        value: 10
+      monitor:
+        operator: between
+        min: 6
+        max: 10
+      fail:
+        operator: <
+        value: 6
+    notes: Or negative FCF
+    applies_to_tasks:
+    - primary_ratios
+    enabled: true
+  ev_ebit:
+    name: EV/EBIT
+    description: Operating profit base
+    category: valuation
+    metric_type: ratio
+    thresholds:
+      pass:
+        operator: <
+        value: 7
+      monitor:
+        operator: between
+        min: 7
+        max: 10
+      fail:
+        operator: '>'
+        value: 10
+    notes: Unless margin upside evident
+    applies_to_tasks:
+    - primary_ratios
+    enabled: true
+  rule_1755600562247:
+    name: Stevens Rule
+    description: This is the best rule for all rules
+    category: valuation
+    metric_type: ratio
+    thresholds:
+      pass:
+        operator: '>'
+        value: 100
+      monitor:
+        operator: between
+        min: 10
+        max: 20
+      fail:
+        operator: '>'
+        value: 20
+    notes: ''
+    applies_to_tasks: []
+    enabled: true
+    severity: null
+    implication: null
+ownership:
+  insider_ownership:
+    name: Insider Ownership %
+    description: Aggregate % held by board & execs
+    category: ownership
+    metric_type: percentage
+    thresholds:
+      pass:
+        operator: '>'
+        value: 35
+      monitor:
+        operator: between
+        min: 3
+        max: 10
+      fail:
+        operator: <
+        value: 3
+    notes: Unless family or legacy founder
+    applies_to_tasks:
+    - ownership_task
+    enabled: true
+    severity: null
+    implication: null
+  recent_insider_buys:
+    name: Recent Insider Transactions
+    description: Last 6-12 months director buys/sells
+    category: ownership
+    metric_type: qualitative
+    thresholds:
+      pass:
+        criteria: Multiple open-market buys, esp. post-earnings
+      monitor:
+        criteria: 1-2 individuals buying
+      fail:
+        criteria: Regular option cash-ins or cluster sales
+    applies_to_tasks:
+    - ownership_task
+    enabled: true
+  activist_involvement:
+    name: Activist Involvement
+    description: Presence of activist investors
+    category: ownership
+    metric_type: qualitative
+    thresholds:
+      pass:
+        criteria: Constructive activist, <12m window
+      monitor:
+        criteria: Passive or hostile activist
+      fail:
+        criteria: Historic failure, forced exits
+    applies_to_tasks:
+    - ownership_task
+    enabled: true
+earnings_quality:
+  ebitda_fcf_conversion:
+    name: EBITDA-FCF Conversion
+    description: FCF / EBITDA ratio
+    category: earnings_quality
+    metric_type: percentage
+    thresholds:
+      pass:
+        operator: '>'
+        value: 70
+      monitor:
+        operator: between
+        min: 40
+        max: 70
+      fail:
+        operator: <
+        value: 40
+    notes: Or negative FCF
+    applies_to_tasks:
+    - earnings_quality_task
+    enabled: true
+  net_income_cfo_conversion:
+    name: Net Income-CFO Conversion
+    description: OCF / Net Income ratio
+    category: earnings_quality
+    metric_type: ratio
+    thresholds:
+      pass:
+        operator: '>'
+        value: 1.0
+      monitor:
+        operator: between
+        min: 0.8
+        max: 1.0
+      fail:
+        operator: <
+        value: 0.8
+    notes: < 0.8 indicates aggressive accruals
+    applies_to_tasks:
+    - earnings_quality_task
+    enabled: true
+  adjusted_ebitda_variance:
+    name: Recurring vs Adjusted EBITDA
+    description: Compare management-adjusted to statutory
+    category: earnings_quality
+    metric_type: percentage
+    thresholds:
+      pass:
+        operator: <
+        value: 10
+      monitor:
+        operator: between
+        min: 10
+        max: 20
+      fail:
+        operator: '>'
+        value: 20
+    notes: Percentage difference in adjustments
+    applies_to_tasks:
+    - earnings_quality_task
+    enabled: true
+  accruals_ratio:
+    name: Accruals Ratio
+    description: (Net Income - CFO) / Assets
+    category: earnings_quality
+    metric_type: percentage
+    thresholds:
+      pass:
+        operator: <
+        value: 10
+      monitor:
+        operator: between
+        min: 10
+        max: 20
+      fail:
+        operator: '>'
+        value: 20
+    notes: '> 20% indicates earnings manipulation risk'
+    applies_to_tasks:
+    - earnings_quality_task
+    enabled: true
+balance_sheet:
+  net_debt_ebitda:
+    name: Net Debt / EBITDA
+    description: Leverage ratio
+    category: balance_sheet
+    metric_type: ratio
+    thresholds:
+      pass:
+        operator: <
+        value: 2.5
+      monitor:
+        operator: between
+        min: 2.5
+        max: 3.5
+      fail:
+        operator: '>'
+        value: 3.5
+    notes: Or negative EBITDA
+    applies_to_tasks:
+    - balance_sheet_durability_task
+    enabled: true
+  interest_coverage:
+    name: Interest Coverage
+    description: EBIT / Interest Expense
+    category: balance_sheet
+    metric_type: ratio
+    thresholds:
+      pass:
+        operator: '>'
+        value: 4.0
+      monitor:
+        operator: between
+        min: 2.0
+        max: 4.0
+      fail:
+        operator: <
+        value: 2.0
+    applies_to_tasks:
+    - balance_sheet_durability_task
+    enabled: true
+  liquidity_ratio:
+    name: Liquidity
+    description: Cash + undrawn RCF / 12m obligations
+    category: balance_sheet
+    metric_type: ratio
+    thresholds:
+      pass:
+        operator: '>'
+        value: 1.5
+      monitor:
+        operator: between
+        min: 1.0
+        max: 1.5
+      fail:
+        operator: <
+        value: 1.0
+    applies_to_tasks:
+    - balance_sheet_durability_task
+    enabled: true
+  debt_maturity:
+    name: Debt Maturity Profile
+    description: '% of debt due within 24 months'
+    category: balance_sheet
+    metric_type: percentage
+    thresholds:
+      pass:
+        operator: <
+        value: 25
+      monitor:
+        operator: between
+        min: 25
+        max: 40
+      fail:
+        operator: '>'
+        value: 40
+    applies_to_tasks:
+    - balance_sheet_durability_task
+    enabled: true
+red_flags:
+  declining_fcf:
+    name: Declining FCF despite revenue growth
+    description: FCF trend vs revenue trend
+    category: red_flags
+    metric_type: qualitative
+    severity: high
+    implication: Unsustainable model or poor cost control
+    applies_to_tasks:
+    - primary_ratios
+    - earnings_quality_task
+    enabled: true
+  frequent_one_offs:
+    name: Frequent one-off adjustments
+    description: Adjusted EBITDA with recurring one-offs
+    category: red_flags
+    metric_type: qualitative
+    severity: medium
+    implication: Masking structural margin issues
+    applies_to_tasks:
+    - earnings_quality_task
+    enabled: true
+  working_capital_balloon:
+    name: Ballooning working capital
+    description: Working capital or inventory growth outpacing revenue
+    category: red_flags
+    metric_type: qualitative
+    severity: high
+    implication: Channel stuffing, demand misread
+    applies_to_tasks:
+    - balance_sheet_durability_task
+    enabled: true
+  share_dilution:
+    name: Share count creep
+    description: Share count increasing without accretive ROI
+    category: red_flags
+    metric_type: qualitative
+    severity: medium
+    implication: Poor capital discipline
+    applies_to_tasks:
+    - ownership_task
+    enabled: true
