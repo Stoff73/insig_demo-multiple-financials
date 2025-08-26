@@ -1,6 +1,6 @@
 # Financial Analysis System
 
-A sophisticated financial analysis platform powered by CrewAI that combines multi-agent AI analysis with real-time market data to evaluate any company. The system uses ticker-based organization for analyzing multiple companies with company-specific configurations and data management.
+A financial analysis platform powered by CrewAI that combines multi-agent AI analysis with real-time market data to evaluate any company. The system uses ticker-based organization for analyzing multiple companies with company-specific configurations and data management.
 
 ## Features
 
