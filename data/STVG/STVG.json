@@ -1,0 +1,94 @@
+{
+  "ticker": "STVG.L",
+  "timestamp": "2025-08-29T10:35:00.745778",
+  "source": "Yahoo Finance",
+  "data": {
+    "2025": {
+      "income_statement": {},
+      "balance_sheet": {},
+      "cash_flow": {},
+      "market_data": {
+        "market_cap": 56884676,
+        "share_price": 124.5,
+        "shares_outstanding": 45690500,
+        "enterprise_value": 101984616
+      }
+    },
+    "2024": {
+      "income_statement": {
+        "revenue": 188000000.0,
+        "cogs": 102300000.0,
+        "gross_profit": 85700000.0,
+        "operating_profit": 16700000.0,
+        "ebit": 16700000.0,
+        "interest_expense": 6300000.0,
+        "net_income": 10800000.0,
+        "ebitda": "value not given - source: https://finance.yahoo.com/quote/STVG.L",
+        "depreciation": "value not given - source: https://finance.yahoo.com/quote/STVG.L",
+        "amortization": "value not given - source: https://finance.yahoo.com/quote/STVG.L",
+        "gross_margin_percent": 45.58510638297872
+      },
+      "balance_sheet": {
+        "total_assets": 169700000.0,
+        "current_assets": 87900000.0,
+        "cash_and_bank_balance": 11100000.0,
+        "inventories": 28800000.0,
+        "receivables": 16300000.0,
+        "total_liabilities": 182600000.0,
+        "current_liabilities": 59100000.0,
+        "total_debt": 67200000.0,
+        "total_equity": -12900000.0,
+        "goodwill": 20300000.0,
+        "intangible_assets": "value not given - source: https://finance.yahoo.com/quote/STVG.L",
+        "net_debt": 56100000.0,
+        "tangible_book_value": -33200000.0
+      },
+      "cash_flow": {
+        "operating_cash_flow": 8700000.0,
+        "capital_expenditure": -1400000.0,
+        "free_cash_flow": 7300000.0
+      },
+      "market_data": {
+        "note": "Historical market data requires different API endpoints"
+      }
+    },
+    "2023": {
+      "income_statement": {
+        "revenue": 168400000.0,
+        "cogs": 92100000.0,
+        "gross_profit": 76300000.0,
+        "operating_profit": 12400000.0,
+        "ebit": 5700000.0,
+        "interest_expense": 5700000.0,
+        "net_income": 4500000.0,
+        "ebitda": "value not given - source: https://finance.yahoo.com/quote/STVG.L",
+        "depreciation": "value not given - source: https://finance.yahoo.com/quote/STVG.L",
+        "amortization": "value not given - source: https://finance.yahoo.com/quote/STVG.L",
+        "gross_margin_percent": 45.30878859857482
+      },
+      "balance_sheet": {
+        "total_assets": 153900000.0,
+        "current_assets": 77200000.0,
+        "cash_and_bank_balance": 13900000.0,
+        "inventories": 24400000.0,
+        "receivables": 13900000.0,
+        "total_liabilities": 166500000.0,
+        "current_liabilities": 43700000.0,
+        "total_debt": 65300000.0,
+        "total_equity": -12600000.0,
+        "goodwill": 14500000.0,
+        "intangible_assets": "value not given - source: https://finance.yahoo.com/quote/STVG.L",
+        "net_debt": 51400000.0,
+        "tangible_book_value": -27100000.0
+      },
+      "cash_flow": {
+        "operating_cash_flow": 3800000.0,
+        "capital_expenditure": -1200000.0,
+        "free_cash_flow": 2600000.0
+      },
+      "market_data": {
+        "note": "Historical market data requires different API endpoints"
+      }
+    }
+  }
+}

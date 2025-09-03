@@ -32,7 +32,7 @@ Implemented a comprehensive multi-company research capability that allows the ap
   - Updated task tracking to store ticker information
 
 #### CrewAI Changes
-- **src/xp_power_demo/crew.py**
+- **src/insig_analyst_demo/crew.py**
   - Added `company_ticker` class attribute for dynamic company support
   - Modified `@before_kickoff` decorator to initialize company-specific file tools
   - Implemented dynamic data path resolution based on ticker
@@ -50,7 +50,7 @@ Implemented a comprehensive multi-company research capability that allows the ap
   - Added details about dynamic data validation
 
 ### Data Migration
-- **Moved Files**: All existing XP Power data files were migrated from `data/` to `data/XPP/`:
+- **Moved Files**: All existing company data files were migrated from `data/` to company-specific folders:
   - `xp-power.md` → `data/XPP/xp-power.md`
   - `initial_screening.md` → `data/XPP/initial_screening.md`
   - `xp_power_ownership.md` → `data/XPP/xp_power_ownership.md`
@@ -61,7 +61,7 @@ Implemented a comprehensive multi-company research capability that allows the ap
 
 ### Removed Features
 - Removed dependency on year parameter for analysis
-- Removed hardcoded XP Power defaults (now requires ticker input)
+- Removed hardcoded company defaults (now requires ticker input)
 
 ### Technical Details
 
@@ -83,7 +83,7 @@ Implemented a comprehensive multi-company research capability that allows the ap
 
 ### Breaking Changes
 - **API Contract Change**: `/api/analysis/start` now requires `ticker` instead of `year`
-- **Data Location Change**: XP Power data moved from `data/` to `data/XPP/`
+- **Data Location Change**: Company data moved from `data/` to `data/{TICKER}/`
 
 ### Migration Guide
 For existing users:
@@ -111,7 +111,7 @@ For existing users:
 
 #### Modified Files for Ratio Configuration
 - **backend/ratio_config_manager.py**: Added ticker parameter to constructor for company-specific ratio management
-- **src/xp_power_demo/ratio_calc.py**: Updated to use company-specific `ratio_rules.md` from `data/{TICKER}/`
+- **src/insig_analyst_demo/ratio_calc.py**: Updated to use company-specific `ratio_rules.md` from `data/{TICKER}/`
 - **frontend/src/pages/RatiosConfiguration.jsx**: Added ticker prompt dialog for company selection
 - **frontend/src/utils/api.js**: Updated ratio API calls to include ticker parameter
 
@@ -132,7 +132,7 @@ For existing users:
 
 ### Summary of Changes
 
-This update transforms the application from a single-company system (XP Power) to a dynamic multi-company analysis platform. Key improvements include:
+This update transforms the application from a single-company system to a dynamic multi-company analysis platform. Key improvements include:
 
 1. **Ticker-Based Architecture**: All components now use ticker symbols for organization
 2. **Company Isolation**: Each company has separate data, configuration, and output folders

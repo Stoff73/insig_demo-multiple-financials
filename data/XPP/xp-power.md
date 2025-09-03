@@ -8,7 +8,7 @@
 
 XP Power Limited ("XP Power" or "the Group"), one of the world's leading developers and manufacturers of critical power control solutions for the Semiconductor Manufacturing Equipment, Healthcare and Industrial Technology sectors, today announces its interim results for the six months ended 30 June 2025 ("H1 2025" or "the period").
 
-## Financial Summary
+# Financial Summary
 
 ### Six months ended 30 June
 
@@ -78,7 +78,7 @@ XP Power Limited ("XP Power" or "the Group"), one of the world's leading develop
   - Strong operating cash conversion
   - Net Debt : LTM Adjusted EBITDA of 1.8x, in line with expectations
 
-## Operational Highlights
+# Operational Highlights
 
 ### Market Management
 - **Proactively managing challenging market conditions:**
@@ -211,7 +211,7 @@ Sales to Europe totalled £32.4m (H1 2024: £43.3m) and were 23% lower than the 
 
 Sales to Asia totalled £10.2m (H1 2024: £14.1m) were 26% lower than the prior period in constant currency, just under half of which was due to our exit from the China Semiconductor market. Sales elsewhere in the region were indirectly impacted by US/China trade relations, which have accelerated China's efforts to shift its supply chain to domestic manufacturers.
 
-## Delivery of our Strategy
+# Delivery of our Strategy
 
 Our vision is to be the first-choice power solutions provider and deliver the ultimate experience for our customers and our people. We made good progress in the period in continuing to build the capabilities necessary to differentiate ourselves in the market, win new business and drive long-term growth, as summarised below.
 
@@ -336,7 +336,7 @@ We are particularly satisfied with the improvement in Adjusted Gross Margin give
 
 The actions taken leave us in a good position to increase our gross margin to historic norms as manufacturing volumes recover.
 
-## Operating Profit
+# Operating Profit
 
 On a reported basis, operating profit was £2.6m compared to £9.1m for the prior period.
 
@@ -399,7 +399,7 @@ The incremental cost to the first half of tariff changes introduced by the US go
 
 To date, we have passed through tariffs incurred on imports into the US to our end-customers and we are confident that we will be able to continue to pass these tariffs on. However, considering the cost of tariffs will be passed through and not marked up, we would expect a slight reduction to overall gross margin percentage.
 
-## Currency
+# Currency
 
 We report our results in sterling; however, most of our revenues and costs arise in other currencies. A large proportion of our revenue and costs are denominated in US dollars, so our results are impacted by relative movements in the currencies that the underlying transactions arise in compared to pounds sterling. The weakening of the US dollar during the six months ended 30 June 2025 had a significant impact on our reported results, as illustrated in the table below.
 
@@ -432,7 +432,7 @@ Adjusted Tax Expense for the period was £0.6m (H1 2024: £1.7m) which represent
 
 The Group reported a loss after tax of £1.8m compared to a profit of £2.2m in H1 2024. Adjusted profit for the period was £0.2m (H1 2024: £5.9m). The basic loss per share was 7.2 pence compared with basic earnings per share of 8.9 pence in H1 2024. Adjusted Diluted Earnings Per Share was 0.4 pence compared with Diluted Earnings per Share of 24.4 pence in 2024. The decrease in Adjusted Diluted Earnings Per Share is primarily due to the reduction in revenues due to an extended period of destocking, partially offset by the robust cost-saving actions taken by the Group.
 
-## Cash Flows
+# Cash Flows
 
 ### Six months ended 30 June
 
@@ -494,9 +494,7 @@ Chief Financial Officer
 
 ---
 
-# Condensed Consolidated Financial Statements
-
-## Condensed Consolidated Income Statement
+# Condensed Consolidated Income Statement
 ### For the six months ended 30 June 2025
 
 | £m | Note | Adjusted | Adjustments (Note 5) | Six months ended 30 June 2025 | Adjusted | Adjustments (Note 5) | Six months ended 30 June 2024 |
@@ -523,7 +521,7 @@ Chief Financial Officer
 - Basic (loss)/earnings per share (Note 7): 0.4 / (7.6) / (7.2) | 24.5 / (15.6) / 8.9
 - Diluted (loss)/earnings per share (Note 7): 0.4 / (7.6) / (7.2) | 24.4 / (15.6) / 8.8
 
-## Condensed Consolidated Statement of Comprehensive Income
+# Condensed Consolidated Statement of Comprehensive Income
 ### For the six months ended 30 June 2025
 
 | £m | Six months ended 30 June 2025 | Six months ended 30 June 2024 |
@@ -539,7 +537,7 @@ Chief Financial Officer
 - Non-controlling interests: 0.1 / 0.1
 - Total comprehensive (loss)/income for the period: (6.7) / 1.2
 
-## Condensed Consolidated Balance Sheet
+# Condensed Consolidated Balance Sheet
 ### As at 30 June 2025
 
 | £m | Note | 30 June 2025 | 31 December 2024 |
@@ -593,7 +591,7 @@ Chief Financial Officer
 | Non-controlling interests | | 0.6 | 0.6 |
 | **TOTAL EQUITY** | | **179.2** | **145.9** |
 
-## Condensed Consolidated Statement of Changes in Equity
+# Condensed Consolidated Statement of Changes in Equity
 ### For the six months ended 30 June 2025
 
 | £m | Share capital | Merger reserve | Share-based payment reserve | Translation reserve | Other reserve | Retained earnings | Total | Non-controlling interests | Total Equity |
@@ -617,7 +615,7 @@ Chief Financial Officer
 | Total comprehensive (loss)/profit for the period | - | - | - | (4.9) | - | (1.9) | (6.8) | 0.1 | (6.7) |
 | **Balance at 30 June 2025** | 110.8 | 0.2 | 3.0 | (7.5) | 9.2 | 62.9 | 178.6 | 0.6 | 179.2 |
 
-## Condensed Consolidated Statement of Cash Flows
+# Condensed Consolidated Statement of Cash Flows
 ### For the six months ended 30 June 2025
 
 | £m | Six months ended 30 June 2025 | Six months ended 30 June 2024 |

@@ -441,7 +441,7 @@ function RatiosConfiguration() {
               // Don't update shared context until submit
             }}
             margin="normal"
-            placeholder="e.g., XP Power"
+            placeholder="e.g., Insig AI"
           />
           <TextField
             fullWidth

@@ -40,26 +40,27 @@ export const formatShortDate = (dateString) => {
  */
 export const groupFilesByType = (files) => {
   const groups = {
-    'Primary Analysis': [],
-    'Ownership Reports': [],
+    'Valuation': [],
+    'Ownership': [],
     'Earnings Quality': [],
     'Balance Sheet': [],
-    'Investment Decisions': [],
+    'Final Analysis': [],
     'Other': [],
   }
 
   files.forEach(file => {
     const name = file.name.toLowerCase()
-    if (name.includes('primary') || name.includes('ratio')) {
-      groups['Primary Analysis'].push(file)
+    // Match the exact file naming convention from agents
+    if (name.includes('valuation')) {
+      groups['Valuation'].push(file)
     } else if (name.includes('ownership')) {
-      groups['Ownership Reports'].push(file)
-    } else if (name.includes('earning')) {
+      groups['Ownership'].push(file)
+    } else if (name.includes('earning_quality')) {
       groups['Earnings Quality'].push(file)
-    } else if (name.includes('balance')) {
+    } else if (name.includes('balancesheet_durability')) {
       groups['Balance Sheet'].push(file)
-    } else if (name.includes('decision')) {
-      groups['Investment Decisions'].push(file)
+    } else if (name.includes('final_analysis')) {
+      groups['Final Analysis'].push(file)
     } else {
       groups['Other'].push(file)
     }

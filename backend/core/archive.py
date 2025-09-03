@@ -53,8 +53,8 @@ def archive_existing_outputs() -> Optional[str]:
 
 def archive_company_outputs(ticker: str) -> Optional[str]:
     """Archive existing output files for a specific company before new analysis"""
-    output_path = OUTPUT_DIR / "companies" / ticker
-    archive_path = ARCHIVE_DIR / "companies" / ticker
+    output_path = OUTPUT_DIR / ticker
+    archive_path = ARCHIVE_DIR / ticker
     return archive_outputs(output_path, archive_path)
 
 

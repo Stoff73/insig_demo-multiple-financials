@@ -129,19 +129,32 @@ function Dashboard() {
               Recent Analyses
             </Typography>
             <List>
-              {tasks.slice(0, 5).map((task) => (
-                <ListItem key={task.task_id}>
-                  <Box display="flex" alignItems="center" width="100%">
-                    <StatusIcon status={task.status} />
-                    <ListItemText
-                      primary={`${task.company || 'XP Power'} (${task.year || '2024'})`}
-                      secondary={task.task_id.slice(0, 8)}
-                      sx={{ ml: 2 }}
-                    />
-                    <StatusChip status={task.status} />
-                  </Box>
-                </ListItem>
-              ))}
+              {tasks
+                .filter(task => task.status !== 'error' || (task.error && !task.error.includes('timed out')))
+                .sort((a, b) => {
+                  // Sort by created_at date, most recent first
+                  const dateA = new Date(a.created_at || 0)
+                  const dateB = new Date(b.created_at || 0)
+                  return dateB - dateA
+                })
+                .slice(0, 5)
+                .map((task) => (
+                  <ListItem key={task.task_id}>
+                    <Box display="flex" alignItems="center" width="100%">
+                      <StatusIcon status={task.status} />
+                      <ListItemText
+                        primary={`${task.company || 'Company'} (${task.ticker || 'N/A'})`}
+                        secondary={
+                          task.created_at 
+                            ? formatDate(task.created_at)
+                            : task.task_id.slice(0, 8)
+                        }
+                        sx={{ ml: 2 }}
+                      />
+                      <StatusChip status={task.status} />
+                    </Box>
+                  </ListItem>
+                ))}
               {tasks.length === 0 && (
                 <ListItem>
                   <ListItemText 
@@ -160,15 +173,39 @@ function Dashboard() {
               Latest Reports
             </Typography>
             <List>
-              {outputFiles.slice(0, 5).map((file) => (
-                <ListItem key={file.name}>
-                  <Description color="action" sx={{ mr: 2 }} />
-                  <ListItemText
-                    primary={file.name}
-                    secondary={`${formatFileSize(file.size)} - ${formatDate(file.modified)}`}
-                  />
-                </ListItem>
-              ))}
+              {outputFiles
+                .filter(file => {
+                  // Filter for key report files only
+                  const name = file.name.toLowerCase()
+                  return name.includes('valuation') || 
+                         name.includes('ownership') || 
+                         name.includes('earning_quality') || 
+                         name.includes('balancesheet_durability') || 
+                         name.includes('final_analysis')
+                })
+                .sort((a, b) => {
+                  // Sort by modified date, most recent first
+                  const dateA = new Date(a.modified || 0)
+                  const dateB = new Date(b.modified || 0)
+                  return dateB - dateA
+                })
+                .slice(0, 5)
+                .map((file) => {
+                  // Extract ticker and report type from filename
+                  const match = file.name.match(/^([A-Z]+)_(.+)\.md$/)
+                  const ticker = match ? match[1] : ''
+                  const reportType = match ? match[2].replace(/_/g, ' ') : file.name
+                  
+                  return (
+                    <ListItem key={file.name}>
+                      <Description color="action" sx={{ mr: 2 }} />
+                      <ListItemText
+                        primary={`${ticker} - ${reportType}`}
+                        secondary={`${formatFileSize(file.size)} - ${formatDate(file.modified)}`}
+                      />
+                    </ListItem>
+                  )
+                })}
               {outputFiles.length === 0 && (
                 <ListItem>
                   <ListItemText 

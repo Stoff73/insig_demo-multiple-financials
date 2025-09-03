@@ -31,6 +31,7 @@ function Analysis() {
   const [company, setCompany] = useState(sharedCompany)
   const [ticker, setTicker] = useState(sharedTicker)
   const [error, setError] = useState(null)
+  const [info, setInfo] = useState(null)
   
   // Sync with shared context when local state changes
   useEffect(() => {
@@ -50,6 +51,25 @@ function Analysis() {
     setTicker(sharedTicker)
   }, [sharedTicker])
   
+  // Create default ratio_rules.md when company and ticker are entered
+  useEffect(() => {
+    const createDefaultRatioRules = async () => {
+      if (company && ticker && !info) {
+        try {
+          // Check if ratio rules exist by trying to get ratios
+          const response = await analysisAPI.getRatios(ticker)
+          if (response.data) {
+            setInfo(`Default ratio configuration loaded for ${ticker}`)
+          }
+        } catch (error) {
+          // Ratios don't exist yet, they'll be created when analysis starts
+          console.log('Ratio rules will be created when analysis starts')
+        }
+      }
+    }
+    createDefaultRatioRules()
+  }, [company, ticker])
+  
   const {
     taskStatus,
     loading,
@@ -61,17 +81,36 @@ function Analysis() {
 
   const startAnalysis = async () => {
     setError(null)
+    setInfo(null)
+    console.log('Starting analysis for:', company, ticker)
     
     try {
       const response = await analysisAPI.startSingle({ company, ticker })
+      console.log('Analysis started:', response.data)
       
-      startTask(response.data.task_id, {
-        task_id: response.data.task_id,
-        status: TASK_STATUS.INITIALIZING,
-        progress: 0,
-        logs: ['Starting analysis...'],
-      })
+      if (response.data.task_id) {
+        startTask(response.data.task_id, {
+          task_id: response.data.task_id,
+          status: TASK_STATUS.INITIALIZING,
+          progress: 0,
+          logs: ['Starting analysis...'],
+        })
+        
+        // Show info if ratio rules were created
+        if (response.data.ratio_rules_created) {
+          setInfo(`Default ratio_rules.md file created for ${ticker}`)
+        }
+      } else {
+        console.error('No task_id in response:', response.data)
+        setError(response.data.message || 'Failed to start analysis')
+        
+        // Show info about ratio rules creation even if analysis can't start
+        if (response.data.ratio_rules_created) {
+          setInfo(`Default ratio_rules.md file created for ${ticker}. ${response.data.message || ''}`)
+        }
+      }
     } catch (error) {
+      console.error('Error starting analysis:', error)
       setError('Failed to start analysis: ' + (error.response?.data?.detail || error.message))
     }
   }
@@ -90,6 +129,7 @@ function Analysis() {
   const resetForm = () => {
     reset()
     setError(null)
+    setInfo(null)
   }
 
   return (
@@ -114,7 +154,7 @@ function Analysis() {
                   onChange={(e) => setCompany(e.target.value)}
                   disabled={loading}
                   margin="normal"
-                  placeholder="e.g., XP Power"
+                  placeholder="e.g., Insig AI"
                 />
                 
                 <TextField
@@ -161,6 +201,12 @@ function Analysis() {
                   </Button>
                 )}
               </Box>
+              
+              {info && (
+                <Alert severity="info" sx={{ mt: 2 }}>
+                  {info}
+                </Alert>
+              )}
               
               {error && (
                 <Alert severity="error" sx={{ mt: 2 }}>

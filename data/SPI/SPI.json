@@ -1,0 +1,98 @@
+{
+  "ticker": "SPI.L",
+  "timestamp": "2025-09-03T10:31:53.143502",
+  "source": "Yahoo Finance",
+  "data": {
+    "2025": {
+      "income_statement": {},
+      "balance_sheet": {},
+      "cash_flow": {},
+      "market_data": {
+        "market_cap": 871056640,
+        "share_price": 208.5,
+        "shares_outstanding": 402371008,
+        "enterprise_value": 2109328640
+      }
+    },
+    "2024": {
+      "income_statement": {
+        "revenue": 1511200000.0,
+        "cogs": 827600000.0,
+        "gross_profit": 683600000.0,
+        "operating_profit": 141300000.0,
+        "operating_profit_loss": 141300000.0,
+        "statutory_operating_profit": 141300000.0,
+        "ebit": 136700000.0,
+        "interest_expense": 98400000.0,
+        "net_income": 25400000.0,
+        "depreciation": 112200000.0,
+        "amortization": "value not given - source: https://finance.yahoo.com/quote/SPI.L",
+        "ebitda": 248900000.0,
+        "gross_margin_percent": 45.23557437797777
+      },
+      "balance_sheet": {
+        "total_assets": 2343200000.0,
+        "current_assets": 225300000.0,
+        "cash_and_bank_balance": 41200000.0,
+        "inventories": 46600000.0,
+        "receivables": 76900000.0,
+        "total_liabilities": 1597000000.0,
+        "current_liabilities": 341700000.0,
+        "total_debt": 1279900000.0,
+        "total_equity": 746200000.0,
+        "goodwill": 411600000.0,
+        "intangible_assets": 25800000.0,
+        "net_debt": 1238700000.0,
+        "tangible_book_value": 311000000.0
+      },
+      "cash_flow": {
+        "operating_cash_flow": 235700000.0,
+        "capital_expenditure": -112100000.0,
+        "free_cash_flow": 123600000.0
+      },
+      "market_data": {
+        "note": "Historical market data requires different API endpoints"
+      }
+    },
+    "2023": {
+      "income_statement": {
+        "revenue": 1359000000.0,
+        "cogs": 734800000.0,
+        "gross_profit": 624200000.0,
+        "operating_profit": 126800000.0,
+        "operating_profit_loss": 126800000.0,
+        "statutory_operating_profit": 126800000.0,
+        "ebit": 126100000.0,
+        "interest_expense": 91500000.0,
+        "net_income": 27300000.0,
+        "depreciation": 103600000.0,
+        "amortization": "value not given - source: https://finance.yahoo.com/quote/SPI.L",
+        "ebitda": 229700000.0,
+        "gross_margin_percent": 45.9308314937454
+      },
+      "balance_sheet": {
+        "total_assets": 2288100000.0,
+        "current_assets": 220600000.0,
+        "cash_and_bank_balance": 49600000.0,
+        "inventories": 44300000.0,
+        "receivables": 69300000.0,
+        "total_liabilities": 1550300000.0,
+        "current_liabilities": 317600000.0,
+        "total_debt": 1257000000.0,
+        "total_equity": 737800000.0,
+        "goodwill": 411100000.0,
+        "intangible_assets": 27200000.0,
+        "net_debt": 1207400000.0,
+        "tangible_book_value": 301600000.0
+      },
+      "cash_flow": {
+        "operating_cash_flow": 215500000.0,
+        "capital_expenditure": -84400000.0,
+        "free_cash_flow": 131100000.0
+      },
+      "market_data": {
+        "note": "Historical market data requires different API endpoints"
+      }
+    }
+  }
+}

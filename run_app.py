@@ -18,13 +18,35 @@ def main():
     
     # Kill any existing processes on our ports
     print("Cleaning up existing processes...")
-    subprocess.run("lsof -ti:8000 | xargs kill -9 2>/dev/null", shell=True)
-    subprocess.run("lsof -ti:3000 | xargs kill -9 2>/dev/null", shell=True)
+    # Use subprocess without shell=True to avoid command injection
+    try:
+        # Get PIDs on port 8000
+        result = subprocess.run(['lsof', '-ti:8000'], capture_output=True, text=True)
+        if result.stdout.strip():
+            pids = result.stdout.strip().split('\n')
+            for pid in pids:
+                subprocess.run(['kill', '-9', pid], capture_output=True)
+    except (subprocess.SubprocessError, FileNotFoundError):
+        pass  # lsof might not be available on all systems
+    
+    try:
+        # Get PIDs on port 3000
+        result = subprocess.run(['lsof', '-ti:3000'], capture_output=True, text=True)
+        if result.stdout.strip():
+            pids = result.stdout.strip().split('\n')
+            for pid in pids:
+                subprocess.run(['kill', '-9', pid], capture_output=True)
+    except (subprocess.SubprocessError, FileNotFoundError):
+        pass  # lsof might not be available on all systems
+    
+    # Use venv Python if available, otherwise system Python
+    venv_python = Path(__file__).parent / ".venv" / "bin" / "python"
+    python_executable = str(venv_python) if venv_python.exists() else sys.executable
     
     # Start backend
     print("Starting FastAPI backend...")
     backend_process = subprocess.Popen(
-        [sys.executable, "-m", "uvicorn", "backend.main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"],
+        [python_executable, "-m", "uvicorn", "backend.main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"],
         cwd=Path(__file__).parent
     )
     

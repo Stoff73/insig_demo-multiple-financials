@@ -45,7 +45,41 @@ function Reports() {
   const { data: outputData, execute: fetchOutputFiles } = useApi(fileAPI.getOutputFiles)
   const { data: archiveData, execute: fetchArchives } = useApi(archiveAPI.getArchives)
   
-  const outputFiles = outputData?.files || []
+  // Filter to show only the 5 key report files from the latest analysis
+  const allOutputFiles = outputData?.files || []
+  const keyReportFiles = ['valuation', 'ownership', 'earning_quality', 'balancesheet_durability', 'final_analysis']
+  
+  // Group files by ticker and get the latest set
+  const filesByTicker = {}
+  allOutputFiles.forEach(file => {
+    const match = file.name.match(/^([A-Z]+)_/)
+    if (match) {
+      const ticker = match[1]
+      if (!filesByTicker[ticker]) {
+        filesByTicker[ticker] = []
+      }
+      filesByTicker[ticker].push(file)
+    }
+  })
+  
+  // Get the most recent ticker's files (assuming latest modified)
+  let outputFiles = []
+  if (Object.keys(filesByTicker).length > 0) {
+    // Sort tickers by the most recent file modification time
+    const sortedTickers = Object.keys(filesByTicker).sort((a, b) => {
+      const aLatest = Math.max(...filesByTicker[a].map(f => new Date(f.modified).getTime()))
+      const bLatest = Math.max(...filesByTicker[b].map(f => new Date(f.modified).getTime()))
+      return bLatest - aLatest
+    })
+    
+    // Get files from the most recent ticker
+    const latestTicker = sortedTickers[0]
+    outputFiles = filesByTicker[latestTicker].filter(file => {
+      const name = file.name.toLowerCase()
+      return keyReportFiles.some(report => name.includes(report))
+    })
+  }
+  
   const archives = archiveData?.archives || []
   const loading = !outputData && !archiveData
 
@@ -115,27 +149,29 @@ function Reports() {
           {outputFiles.length > 0 ? (
             <>
               <Alert severity="info" sx={{ mb: 3 }}>
-                Showing reports from the latest analysis. Previous analyses are available in the Archive tab.
+                Showing the current analysis reports. Previous analyses are available in the Archive tab.
               </Alert>
               
               <Grid container spacing={3}>
-                {Object.entries(groupFilesByType(outputFiles)).map(([category, files]) => (
-                  files.length > 0 && (
-                    <Grid item xs={12} md={6} key={category}>
+                {/* Define the report categories in the correct order */}
+                {[
+                  { key: 'valuation', label: 'Valuation' },
+                  { key: 'ownership', label: 'Ownership' },
+                  { key: 'earning_quality', label: 'Earnings Quality' },
+                  { key: 'balancesheet_durability', label: 'Balance Sheet' },
+                  { key: 'final_analysis', label: 'Final Analysis' }
+                ].map(({ key, label }) => {
+                  const file = outputFiles.find(f => f.name.toLowerCase().includes(key))
+                  return file ? (
+                    <Grid item xs={12} md={6} key={key}>
                       <Card>
                         <CardContent>
                           <Typography variant="h6" gutterBottom>
-                            {category}
-                            <Chip 
-                              label={files.length} 
-                              size="small" 
-                              sx={{ ml: 1 }}
-                              color="primary"
-                            />
+                            {label}
                           </Typography>
                           
                           <FileList
-                            files={files}
+                            files={[file]}
                             onView={viewFile}
                             onDownload={downloadFile}
                             showDivider={false}
@@ -143,8 +179,8 @@ function Reports() {
                         </CardContent>
                       </Card>
                     </Grid>
-                  )
-                ))}
+                  ) : null
+                })}
               </Grid>
             </>
           ) : (

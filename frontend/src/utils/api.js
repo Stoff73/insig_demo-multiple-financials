@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 // API base URL - can be configured via environment variable
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+// When running in development with Vite proxy, use empty string to use relative paths
+const API_BASE_URL = import.meta.env.VITE_API_URL || ''
 
 // Create axios instance with default config
 const api = axios.create({

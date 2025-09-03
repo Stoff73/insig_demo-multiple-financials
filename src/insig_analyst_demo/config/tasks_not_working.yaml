@@ -1,0 +1,181 @@
+primary_ratios:
+  description: |
+    You MUST start by using the FileReadTool to read data/{ticker}/{ticker}_agent_ratios.md
+    
+    Example of using FileReadTool:
+    Action: Use FileReadTool to read data/{ticker}/{ticker}_agent_ratios.md
+    
+    CRITICAL STEPS:
+    1. First, use FileReadTool to read {ticker}_agent_ratios.md 
+    2. Extract the ratios and market data from that file
+    3. Use FileReadTool to read any financial statements you need
+    4. Base ALL your analysis on the data you read - NEVER make up numbers
+    
+    The currency is in GBP (£) not USD ($). All values are in British Pounds.
+    Use ONLY the exact numbers from the files you read.
+  goal: |
+    Your goal is to analyze the valuation using ONLY data from files:
+    
+    1. READ {ticker}_agent_ratios.md using FileReadTool - this has the calculated ratios
+    2. The ratios are ALREADY CALCULATED - use them exactly as shown
+    3. Market cap, revenue, and all financial data is in GBP (£)
+    
+    Steps:
+    - Use FileReadTool to read data/{ticker}/{ticker}_agent_ratios.md
+    - Copy the exact ratios from that file
+    - Do NOT recalculate anything
+    - Report in GBP (£) not USD ($)
+    
+    If you cannot find data, state "Data not found in files"
+  expected_output: |
+    A formatted table with the EXACT ratios from {ticker}_agent_ratios.md
+    Include:
+    - Market Data table (with £ values, not $)
+    - Valuation Ratios table (exact values from file)
+    - Brief analysis of what these ratios mean
+    - Conclusion based on PASS/MONITOR/FAIL outcomes
+    
+    Sign with: Victoria Clarke, {current_date}, {current_time}
+  agent: victoria_clarke
+  output_file: output/{ticker}/{ticker}-valuation.md
+
+ownership_task:
+  description: |
+    You MUST use FileReadTool to search for ownership information.
+    
+    CRITICAL STEPS:
+    1. Use FileReadTool to look for files with ownership data
+    2. If no ownership files exist, state "No ownership data found"
+    3. Extract any insider transaction information you find
+    
+    Example:
+    Action: Use FileReadTool to read data/{ticker}/{ticker}_ownership.md
+    
+    If file doesn't exist, try other files that might contain ownership info.
+  goal: |
+    Find ownership information using FileReadTool:
+    
+    1. Look for ownership files in data/{ticker}/
+    2. Search for insider transactions
+    3. Report ONLY what you find in files
+    
+    If no ownership data exists, clearly state:
+    "No ownership information available in provided files"
+    
+    Do NOT make up any ownership percentages or transactions.
+  expected_output: |
+    Either:
+    - A table with actual ownership data found in files
+    - OR "No ownership information available in provided files"
+    
+    Sign with: Victoria Clarke, {current_date}, {current_time}
+  agent: victoria_clarke
+  output_file: output/{ticker}/{ticker}-ownership.md
+
+earnings_quality_task:
+  description: |
+    You MUST start by using FileReadTool to read data/{ticker}/{ticker}_agent_ratios.md
+    
+    CRITICAL STEPS:
+    1. Use FileReadTool to read {ticker}_agent_ratios.md for earnings ratios
+    2. Use FileReadTool to read notes to financial statements
+    3. Look for one-off items IN THE FILES, not assumptions
+    
+    Example:
+    Action: Use FileReadTool to read data/{ticker}/{ticker}_agent_ratios.md
+    
+    The currency is GBP (£) not USD ($).
+  goal: |
+    Assess earnings quality using ONLY file data:
+    
+    1. READ {ticker}_agent_ratios.md for profitability metrics
+    2. Look at Operating Margin, Net Margin, ROE from the file
+    3. Check Accruals Ratio and EBITDA to FCF Conversion
+    
+    Use the EXACT values from the files.
+    Report whether earnings are sustainable based on the ratios.
+    
+    All values are in GBP (£).
+  expected_output: |
+    A table showing:
+    - Profitability ratios from {ticker}_agent_ratios.md (in £)
+    - Earnings quality metrics from the file
+    - Assessment: sustainable/repeatable/cash-convertible
+    - Conclusion based on the data
+    
+    Sign with: Daniel Osei, {current_date}, {current_time}
+  agent: daniel_osei
+  output_file: output/{ticker}/{ticker}-earning-quality.md
+
+balance_sheet_durability_task:
+  description: |
+    You MUST start by using FileReadTool to read data/{ticker}/{ticker}_agent_ratios.md
+    
+    CRITICAL STEPS:
+    1. Use FileReadTool to read {ticker}_agent_ratios.md for leverage ratios
+    2. Look at liquidity and solvency metrics FROM THE FILE
+    3. Use FileReadTool to read balance sheet if needed
+    
+    Example:
+    Action: Use FileReadTool to read data/{ticker}/{ticker}_agent_ratios.md
+    
+    The currency is GBP (£) not USD ($).
+  goal: |
+    Determine balance sheet strength using FILE DATA:
+    
+    1. READ leverage ratios from {ticker}_agent_ratios.md
+    2. Check Current Ratio, Quick Ratio, Debt-to-Equity
+    3. Review Interest Coverage and other solvency metrics
+    
+    Use EXACT values from the files.
+    All monetary values are in GBP (£).
+    
+    Report based on PASS/MONITOR/FAIL outcomes in the file.
+  expected_output: |
+    A table showing:
+    - Liquidity ratios from {ticker}_agent_ratios.md
+    - Leverage ratios from the file (with £ values)
+    - Solvency assessment based on thresholds
+    - Conclusion on balance sheet durability
+    
+    Sign with: Daniel Osei, {current_date}, {current_time}
+  agent: daniel_osei
+  output_file: output/{ticker}/{ticker}-balancesheet-durability.md
+
+final_analysis_task:
+  description: |
+    You MUST use FileReadTool to read ALL four reports:
+    
+    REQUIRED READING (use FileReadTool for each):
+    1. output/{ticker}/{ticker}-valuation.md
+    2. output/{ticker}/{ticker}-ownership.md
+    3. output/{ticker}/{ticker}-earning-quality.md
+    4. output/{ticker}/{ticker}-balancesheet-durability.md
+    
+    Example:
+    Action: Use FileReadTool to read output/{ticker}/{ticker}-valuation.md
+    
+    Read each file and synthesize the findings.
+  goal: |
+    Synthesize the analysis from all reports:
+    
+    1. READ each report using FileReadTool
+    2. Summarize key findings from each analyst
+    3. Identify red flags and opportunities
+    
+    Base everything on what you read from the files.
+    Do NOT add information not in the reports.
+    
+    View through activist investor lens.
+  expected_output: |
+    1-2 page synthesis including:
+    - Key findings from each report
+    - Red flags identified
+    - Potential opportunities
+    - Overall investment thesis
+    
+    Based ONLY on the reports you read.
+    
+    Sign with: Richard Bernstein, {current_date}, {current_time}
+  agent: richard
+  output_file: output/{ticker}/{ticker}-final-analysis.md

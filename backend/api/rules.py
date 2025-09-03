@@ -122,7 +122,7 @@ async def export_rules_for_task(task_name: str):
 # Helper functions for task configuration updates
 async def update_task_rules(rule_id: str, category: str, task_names: List[str]):
     """Update task configurations when rules change"""
-    config_path = Path(__file__).parent.parent.parent / "src" / "xp_power_demo" / "config" / "tasks.yaml"
+    config_path = Path(__file__).parent.parent.parent / "src" / "insig_analyst_demo" / "config" / "tasks.yaml"
     
     if not config_path.exists():
         return
@@ -144,7 +144,7 @@ async def update_task_rules(rule_id: str, category: str, task_names: List[str]):
 
 async def update_task_with_rule(task_name: str, rule_id: str, category: str):
     """Update a specific task when a rule is assigned to it"""
-    config_path = Path(__file__).parent.parent.parent / "src" / "xp_power_demo" / "config" / "tasks.yaml"
+    config_path = Path(__file__).parent.parent.parent / "src" / "insig_analyst_demo" / "config" / "tasks.yaml"
     
     if not config_path.exists():
         return

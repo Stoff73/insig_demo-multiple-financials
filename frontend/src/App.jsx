@@ -6,7 +6,6 @@ import ErrorBoundary from './components/ErrorBoundary'
 import Layout from './components/Layout'
 import Dashboard from './pages/Dashboard'
 import Analysis from './pages/Analysis'
-import MultiCompanyAnalysis from './pages/MultiCompanyAnalysis'
 import Reports from './pages/Reports'
 import CompanyReports from './pages/CompanyReports'
 import Configuration from './pages/Configuration'
@@ -41,7 +40,6 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/documents" element={<Documents />} />
                 <Route path="/analysis" element={<Analysis />} />
-                <Route path="/multi-analysis" element={<MultiCompanyAnalysis />} />
                 <Route path="/reports" element={<Reports />} />
                 <Route path="/reports/company/:ticker" element={<CompanyReports />} />
                 <Route path="/configuration" element={<Configuration />} />

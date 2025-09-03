@@ -1,0 +1,97 @@
+{
+  "ticker": "INSG.L",
+  "timestamp": "2025-08-30T09:04:00.670423",
+  "source": "Yahoo Finance",
+  "data": {
+    "2025": {
+      "income_statement": {},
+      "balance_sheet": {},
+      "cash_flow": {},
+      "market_data": {
+        "market_cap": 29597960,
+        "share_price": 24.5,
+        "shares_outstanding": 120808000,
+        "enterprise_value": 27828744
+      }
+    },
+    "2024": {
+      "income_statement": {
+        "revenue": 369860.0,
+        "cogs": 0.0,
+        "gross_profit": 369860.0,
+        "operating_profit": -2098157.0,
+        "operating_profit_loss": -2098157.0,
+        "statutory_operating_profit": -2098157.0,
+        "ebit": -17609228.0,
+        "interest_expense": 126390.0,
+        "net_income": -15932380.0,
+        "depreciation": 1578916.0,
+        "amortization": "value not given - source: https://finance.yahoo.com/quote/INSG.L",
+        "ebitda": -16030312.0,
+        "gross_margin_percent": 100.0
+      },
+      "balance_sheet": {
+        "total_assets": 4552239.0,
+        "current_assets": 142587.0,
+        "cash_and_bank_balance": 37847.0,
+        "receivables": 77250.0,
+        "total_liabilities": 2983562.0,
+        "current_liabilities": 1882562.0,
+        "total_debt": 1544324.0,
+        "total_equity": 1568677.0,
+        "goodwill": 0.0,
+        "intangible_assets": 4404000.0,
+        "net_debt": 1506477.0,
+        "tangible_book_value": -2806583.0
+      },
+      "cash_flow": {
+        "operating_cash_flow": -299394.0,
+        "capital_expenditure": -1020516.0,
+        "free_cash_flow": -1319910.0
+      },
+      "market_data": {
+        "note": "Historical market data requires different API endpoints"
+      }
+    },
+    "2023": {
+      "income_statement": {
+        "revenue": 693734.0,
+        "cogs": 50.0,
+        "gross_profit": 693684.0,
+        "operating_profit": -4780393.0,
+        "operating_profit_loss": -4780393.0,
+        "statutory_operating_profit": -4780393.0,
+        "ebit": -21354384.0,
+        "interest_expense": 80072.0,
+        "net_income": -18563996.0,
+        "depreciation": 2839889.0,
+        "amortization": "value not given - source: https://finance.yahoo.com/quote/INSG.L",
+        "ebitda": -18514495.0,
+        "gross_margin_percent": 99.99279262656869
+      },
+      "balance_sheet": {
+        "total_assets": 21375616.0,
+        "current_assets": 1000424.0,
+        "cash_and_bank_balance": 280584.0,
+        "inventories": "value not given - source: https://finance.yahoo.com/quote/INSG.L",
+        "receivables": 125030.0,
+        "total_liabilities": 5808046.0,
+        "current_liabilities": 3205082.0,
+        "total_debt": 2289023.0,
+        "total_equity": 15567570.0,
+        "goodwill": 9965895.0,
+        "intangible_assets": 10343383.0,
+        "net_debt": 2008439.0,
+        "tangible_book_value": -4690691.0
+      },
+      "cash_flow": {
+        "operating_cash_flow": -967195.0,
+        "capital_expenditure": -1465224.0,
+        "free_cash_flow": -2432419.0
+      },
+      "market_data": {
+        "note": "Historical market data requires different API endpoints"
+      }
+    }
+  }
+}

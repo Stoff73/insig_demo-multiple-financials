@@ -31,8 +31,7 @@ const drawerWidth = 240
 const menuItems = [
   { text: 'Dashboard', icon: <DashboardIcon />, path: '/dashboard' },
   { text: 'Documents', icon: <FolderIcon />, path: '/documents' },
-  { text: 'Single Analysis', icon: <AnalyticsIcon />, path: '/analysis' },
-  { text: 'Multi-Company', icon: <BusinessIcon />, path: '/multi-analysis' },
+  { text: 'Analysis', icon: <AnalyticsIcon />, path: '/analysis' },
   { text: 'Reports', icon: <DescriptionIcon />, path: '/reports' },
   { text: 'Configuration', icon: <SettingsIcon />, path: '/configuration' },
   { text: 'Ratios', icon: <CalculateIcon />, path: '/ratios' },

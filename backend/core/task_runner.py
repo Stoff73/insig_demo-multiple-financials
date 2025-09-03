@@ -122,7 +122,7 @@ class TaskRunner:
     def run_single_company_analysis(self, task_id: str, company: str, year: str):
         """Run crew analysis for a single company"""
         try:
-            from xp_power_demo.crew import XpPowerDemo
+            from src.insig_analyst_demo.crew import InsigAnalystDemo
             
             # Archive existing outputs
             archive_timestamp = archive_existing_outputs()
@@ -134,7 +134,7 @@ class TaskRunner:
                     f"Starting analysis for {company} ({year})")
             
             # Initialize crew
-            crew_instance = XpPowerDemo()
+            crew_instance = InsigAnalystDemo()
             crew = crew_instance.crew()
             
             # Track progress through tasks
@@ -158,56 +158,6 @@ class TaskRunner:
             result = crew.kickoff(inputs=inputs)
             
             # Update completion
-            self.set_task_result(task_id, result, archive_timestamp)
-            
-        except Exception as e:
-            self.set_task_error(task_id, str(e))
-    
-    def run_multi_company_analysis(self, task_id: str, company_info: Dict[str, str], year: str):
-        """Run crew analysis for a company in multi-company mode"""
-        try:
-            from xp_power_demo.multi_company_crew import MultiCompanyXpPowerDemo
-            
-            ticker = sanitize_ticker(company_info['ticker'])
-            
-            # Archive existing outputs for this company
-            archive_timestamp = archive_company_outputs(ticker)
-            if archive_timestamp:
-                self.update_task_status(task_id, "running",
-                    f"Archived previous {ticker} outputs to: archive/companies/{ticker}/{archive_timestamp}")
-            else:
-                self.update_task_status(task_id, "running",
-                    f"Starting analysis for {company_info['name']} ({ticker})")
-            
-            # Initialize multi-company crew
-            crew_instance = MultiCompanyXpPowerDemo(
-                company_ticker=ticker,
-                company_name=company_info['name']
-            )
-            
-            # Track progress through tasks
-            for i, task_name in enumerate(ANALYSIS_TASKS):
-                self.update_task_progress(
-                    task_id,
-                    int((i / len(ANALYSIS_TASKS)) * 100),
-                    f"{ticker}: Executing {task_name}"
-                )
-            
-            # Run the crew
-            from datetime import datetime
-            current_datetime = datetime.now()
-            inputs = {
-                'company': company_info['name'],
-                'company_ticker': ticker,
-                'current_year': year,
-                'current_date': current_datetime.strftime('%Y-%m-%d'),
-                'current_time': current_datetime.strftime('%H:%M:%S')
-            }
-            
-            result = crew_instance.kickoff(inputs=inputs)
-            
-            # Update completion
-            self.running_tasks[task_id]["output_path"] = f"output/companies/{ticker}"
             self.set_task_result(task_id, result, archive_timestamp)
             
         except Exception as e:
