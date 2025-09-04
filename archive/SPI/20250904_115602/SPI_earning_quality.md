@@ -1,0 +1,48 @@
+| Metric Category          | Metric                          | Value / Detail                                                                                  | Analysis / Comments                                                                                                         | Verdict               |
+|-------------------------|--------------------------------|------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|-----------------------|
+| Valuation Ratios        | P/E Ratio                      | 17.1x                                                                                         | Above pass threshold (<10), indicating relatively expensive valuation based on earnings.                                    | Inflated              |
+|                         | EV/EBITDA                     | 8.5x                                                                                          | Above pass threshold (<5), indicating valuation premium relative to EBITDA.                                                | Inflated              |
+|                         | EV/EBIT                       | 15.4x                                                                                         | Well above pass threshold (<7), indicating expensive valuation relative to EBIT.                                           | Inflated              |
+|                         | EV/Revenue                    | 0.7x                                                                                          | Below pass threshold (>1.0), unusually low, possibly reflecting market concerns or sector factors.                          | Mixed (possible undervaluation) |
+|                         | Price to Free Cash Flow       | 3.5x                                                                                          | Very low, indicating cheap valuation relative to free cash flow, but may reflect risk.                                     | Mixed (potentially undervalued) |
+|                         | Free Cash Flow Yield          | 28.4%                                                                                        | Strong cash flow yield, indicating good cash generation relative to market cap.                                            | Sustainable           |
+| Profitability Ratios    | Gross Margin                  | 45.2%                                                                                        | Strong gross margin, indicating good cost control on sales.                                                                | Sustainable           |
+|                         | Operating Margin              | 9.4%                                                                                         | Moderate margin, below pass threshold (>15%), but within monitor range.                                                    | Monitor               |
+|                         | Net Margin                   | 1.7%                                                                                         | Low net margin, indicating high costs or financial expenses impacting profitability.                                        | Monitor               |
+|                         | Return on Equity (ROE)        | 6.8%                                                                                         | Below pass threshold (>10%), moderate profitability on equity.                                                             | Monitor               |
+|                         | Return on Capital Employed (ROCE) | 6.8%                                                                                         | Below pass threshold (>15%), indicating inefficient capital use.                                                           | Inflated (poor efficiency) |
+| Liquidity Ratios        | Current Ratio                 | 0.7x                                                                                         | Below pass threshold (>1.5), indicating liquidity risk with insufficient current assets to cover liabilities.              | Inflated (risk)       |
+|                         | Quick Ratio                   | 0.5x                                                                                         | At monitor threshold, indicating marginal liquidity.                                                                        | Monitor               |
+| Leverage Ratios         | Debt-to-Equity                | 1.7x                                                                                         | Above pass threshold (<0.5), indicating high leverage and financial risk.                                                  | Inflated (high risk)  |
+|                         | Interest Coverage             | 0.7x                                                                                         | Below pass threshold (>4.0), EBIT insufficient to cover interest expense, high financial risk.                             | Inflated (high risk)  |
+|                         | Net Debt/EBITDA               | 5.0x                                                                                         | Above pass threshold (<2.5), indicating high leverage and risk.                                                            | Inflated (high risk)  |
+| Executive Remuneration  | Bonus and LTIP outcomes       | Bonuses at ~35% of max; LTIP vested ~61%                                                      | Partial achievement of financial and strategic targets, aligned with moderate company performance.                         | Reflective of performance |
+| Going Concern           | Auditor opinion               | Going concern basis appropriate; no material uncertainty                                      | Auditor confirms company can continue as going concern despite risks.                                                       | Sustainable (for now) |
+| Revenue Growth          | 2024 Revenue £1,511.2m vs 2023 £1,359.0m | 11.2% growth overall, 6.2% comparable basis                                                   | Solid revenue growth, supporting business sustainability.                                                                  | Sustainable           |
+| Profitability           | EBIT £137.5m; Net Profit £26.0m | EBIT margin ~9.1%; Net margin ~1.7%                                                          | Profitability constrained by high finance costs (£99.9m), limiting net profit.                                              | Inflated (margins pressured) |
+| Cash Flow               | Free Cash Flow Yield 28.4%    | Strong cash generation relative to market cap                                                | Indicates good cash conversion despite profitability challenges.                                                           | Sustainable           |
+| Capital Expenditure     | £112.1m invested in 2024      | Significant investment in hospital refurbishments and sustainability initiatives             | Investment supports future growth and operational efficiency.                                                              | Sustainable           |
+
+Summary Analysis:
+
+Spire Healthcare shows strong revenue growth and solid gross margins, indicating operational strength in its core healthcare services. However, profitability is constrained by high operating costs and very significant finance expenses due to heavy leverage, resulting in low net margins and weak returns on equity and capital employed. The liquidity position is weak, with current and quick ratios below comfortable thresholds, posing short-term financial risk.
+
+Leverage ratios reveal a highly leveraged balance sheet with debt-to-equity at 1.7x, interest coverage below 1x, and net debt to EBITDA at 5.0x, indicating elevated financial risk and potential difficulty servicing debt. The auditor's report confirms the going concern basis is appropriate, but the financial risk profile is elevated.
+
+Valuation multiples are mixed: earnings-based multiples (P/E, EV/EBITDA, EV/EBIT) are high, suggesting the market prices the company at a premium relative to earnings, while EV/Revenue is low, and free cash flow yield is strong, indicating some market skepticism or sector-specific factors. Executive remuneration is aligned with partial achievement of financial and strategic targets, consistent with the company's moderate performance.
+
+Capital expenditure is significant, focusing on hospital refurbishments and sustainability, which may support future operational improvements and margin expansion.
+
+Conclusion:
+
+Spire Healthcare's financials reveal a company with solid operational performance but significant financial risk due to high leverage and weak liquidity. Profitability is modest, heavily impacted by finance costs. The valuation is mixed, with some metrics indicating overvaluation and others suggesting potential undervaluation based on cash flow. Investors should be cautious, as the company's earnings quality is moderate, and financial risk is elevated. The company’s ability to improve margins, reduce leverage, and maintain cash flow generation will be critical for sustainable value creation.
+
+Additional Information Needed:
+
+The cash flow statement was not available, limiting a full assessment of cash flow quality and capital expenditure impact. Access to detailed cash flow data would enhance the analysis.
+
+Signed off by:
+
+Daniel Osei  
+Forensic Accounting & Earnings Quality Specialist  
+2025-09-04 11:50:32

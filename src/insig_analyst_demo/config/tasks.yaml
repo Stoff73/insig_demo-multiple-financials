@@ -147,9 +147,12 @@ final_analysis_task:
     Do not create any additional files, or output files, if there is information you deem important to output,  
     place this in the output file specified.  
     Do NOT browse the web or make external calls - use only the provided files.
-  expected_output: 
-    A 1-2 page report describing the reasons you came to a decision about the company, given the information presented in the initial_screening.md
-    document. 
+  expected_output: |
+    A structured analysis with the following sections:
+    - Company name
+    - Key findings about the company
+    - Why these findings are relevant or important
+    - Your conclusion for the company based on your findings
     Describe how you arrived at your decision in line with the given metrics.
     You must always provide a conclusion to your analysis.
     You MUST sign off with your full name and role at the end.
@@ -157,4 +160,25 @@ final_analysis_task:
     Do **NOT** provide a recommendation, or any substance on what to do next. 
     Any additional information or documents required if anything is missing.
   agent: richard
+  output_file: output/{ticker}/{ticker}_final_analysis_raw.json
+
+formatting_task:
+  description: >
+    Read the JSON output from output/{ticker}/{ticker}_final_analysis_raw.json and
+    format it into a beautiful markdown document without '```'.
+    Follow these guidelines:
+    1. Use proper markdown headers (#, ##, ###)
+    2. Format key findings and insights as bullet points
+    3. Add proper spacing and sections breaks
+    4. Make important conclusions stand out using blockquotes
+    5. Ensure the date is properly formatted
+    6. Add a table of contents at the beginning
+    7. Use horizontal rules (---) to separate major sections
+    8. Present the company analysis in a clear, professional format
+    9. Include the analyst's signature at the end
+  expected_output: >
+    A beautifully formatted markdown report with proper structure, spacing,
+    and visual elements that enhance readability and presentation.
+  agent: formatter
+  context: [final_analysis_task]
   output_file: output/{ticker}/{ticker}_final_analysis.md

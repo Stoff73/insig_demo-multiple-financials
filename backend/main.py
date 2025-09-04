@@ -296,7 +296,7 @@ def archive_existing_outputs(ticker: str):
     
     # Move all files from output to archive
     for file in output_dir.iterdir():
-        if file.is_file() and file.suffix in ['.md', '.pdf']:
+        if file.is_file() and file.suffix in ['.md', '.pdf', '.json']:
             shutil.move(str(file), str(archive_subdir / file.name))
     
     # Also move any subdirectories

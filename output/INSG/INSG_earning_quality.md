@@ -1,50 +1,70 @@
-| Metric Category        | Metric                  | Value (FY2024)             | Assessment Verdict                   |
-|-----------------------|-------------------------|----------------------------|------------------------------------|
-| Valuation Ratios       | EV/EBIT                 | 0.0x                      | Inflated/Distorted due to negative operating earnings (operating loss £17.6M) making EBIT near zero; thus unreliable for valuation purposes. |
-|                       | EV/Revenue              | 42.0x                     | Inflated: Extremely high multiple versus revenue (£370k), suggestive of overvaluation risk given severe losses and weak revenue. |
-|                       | FCF Yield               | 0.0%                      | Fail: No positive free cash flow generated, indicating poor cash conversion from earnings. |
-| Profitability Ratios   | Gross Margin            | 100.0%                    | Sustainable: High gross margin likely due to minimal direct costs, but probably of limited economic substance given minimal revenue and high costs elsewhere. |
-|                       | Operating Margin        | -567.3%                   | Inflated negative loss margin; not sustainable or repeatable. |
-|                       | Net Margin              | -4307.7%                  | Inflated negative margin driven by large impairments and losses. |
-|                       | ROE                     | -2031.3%                  | Negative, unsustainable, reflecting large losses eroding equity base. |
-|                       | ROCE                    | -157.2%                   | Negative, unsustainable capital returns, indicating value destruction. |
-| Liquidity Ratios       | Current Ratio           | 0.1x                      | Fail: Very low liquidity ratio, reflecting severe short-term liquidity risk. |
-|                       | Quick Ratio             | 0.1x                      | Fail: Indicates potential inability to meet short-term obligations. |
-| Leverage Ratios        | Debt-to-Equity          | 1.0x                      | Monitor: Moderate leverage, but equity base has severely eroded. |
-|                       | Interest Coverage       | -16.6x                    | Fail: Operating losses far exceed interest expense; financial stress evident. |
-| Efficiency Ratios      | Inventory Turnover      | 0.0x                      | Fail: No inventory; neutral impact given nature of business but does not add value. |
-|                       | Days Sales Outstanding  | 38 days                   | Pass: Reasonable receivables collection dynamics. |
-| Earnings Quality      | Accruals Ratio           | -686.8%                   | Pass: The negative accrual ratio indicates some earnings quality, but given overall losses and impairments, earnings quality is effectively masked. |
-| Cash Flows            | Net cash used in operating activities | (£299,394)              | Negative but improved from prior year, reflecting cash burn continuing but reduced. |
-| Balance Sheet         | Net Assets (Equity)      | £1,568,677                | Significantly reduced from prior year (£15.57M), indicating large impairment and losses absorbing equity. |
-| Ownership             | Largest shareholder %    | 18.6% (Richard Bernstein) | Strong insider ownership alignment, which may support continuity or provide risk of control dominance. |
+| Metric Category       | Metric                      | Value / Observation                          | Verdict (Sustainable/Repeatable/Cash-Convertible/Inflated) |
+|-----------------------|-----------------------------|----------------------------------------------|-------------------------------------------------------------|
+| Valuation Ratios      | EV/EBIT                     | 0.0x (PASS)                                  | Inflated (due to zero/negative EBIT, valuation distorted)   |
+|                       | EV/Revenue                  | 42.0x (PASS)                                 | Inflated (very high multiple, not supported by earnings)    |
+|                       | FCF Yield                   | 0.0% (FAIL)                                  | Not cash convertible                                        |
+| Profitability         | Gross Margin                | 100.0% (PASS)                                | Inflated (no cost of sales recorded, likely accounting effect) |
+|                       | Operating Margin            | -567.3% (FAIL)                               | Unsustainable, large losses                                 |
+|                       | Net Margin                  | -4307.7% (FAIL)                              | Unsustainable, large losses                                 |
+|                       | ROE                        | -2031.3% (FAIL)                              | Value destructive                                          |
+|                       | ROCE                       | -157.2% (FAIL)                               | Value destructive                                          |
+| Liquidity             | Current Ratio               | 0.1% (FAIL)                                  | Unsustainable, severe liquidity risk                        |
+|                       | Quick Ratio                 | 0.1% (FAIL)                                  | Unsustainable, severe liquidity risk                        |
+| Leverage              | Debt-to-Equity              | 1.0 (MONITOR)                                | Moderate leverage, watch for risk                           |
+|                       | Interest Coverage           | -16.6x (FAIL)                                | Unsustainable, cannot cover interest                        |
+| Efficiency            | Inventory Turnover          | 0.0x (FAIL)                                  | Not applicable or no inventory turnover                     |
+|                       | Days Sales Outstanding      | 38 days (PASS)                               | Sustainable, good receivables collection                    |
+| Earnings Quality      | Accruals Ratio              | -686.8% (PASS)                               | Sustainable, no earnings distortion                         |
+|                       | EBITDA to FCF Conversion    | 0.0 (FAIL)                                   | Not cash convertible                                        |
+|                       | Adjusted vs Statutory Gap   | -0.0 (PASS)                                  | Sustainable, no significant adjustments                     |
+| Asset Quality         | Goodwill/Assets             | 0.0 (PASS)                                   | Sustainable, no goodwill impairment risk                    |
+|                       | Capex/Depreciation          | 0.0 (MONITOR)                                | Potential underinvestment, monitor                         |
+|                       | Tangible Book Value         | £-2.8m (FAIL)                                | Negative tangible equity, risk to asset backing             |
+| Cash Flow             | Cash Conversion             | -0.0 (FAIL)                                  | Not cash convertible                                        |
+|                       | Free Cash Flow              | £-1.3m (FAIL)                                | Negative cash flow, unsustainable                           |
 
-Summary paragraph by metric category:
+---
 
-**Valuation Metrics:** EV/EBIT and EV/Revenue ratios are highly distorted due to the operating loss near £17.6 million and tiny revenue of £370k, making these multiples unreliable indicators of value. The EV/Revenue at 42.0x is exceptionally high compared to typical market standards, signaling potential overvaluation or market expectation dissonance.
+**Analysis Summary:**
 
-**Profitability Metrics:** The company reports a nominal gross margin of 100% due to minimal cost of sales, but the operating margin is dramatically negative at -567%, pushed by significant administrative expenses (over £2.5 million). Net margin and returns on equity and capital employed are also deeply negative, confirming substantial unprofitability and capital destruction.
+- **Valuation:** The EV/EBIT ratio is 0.0x due to negative EBIT, which technically passes the threshold but is misleading. The EV/Revenue multiple is extremely high at 42.0x, indicating the market values the company highly relative to its revenue, despite no earnings or cash flow support. The FCF yield is zero, confirming no free cash flow generation. This suggests valuation is inflated and not supported by fundamentals.
 
-**Liquidity and Leverage:** The current and quick ratios around 0.1 significantly fail liquidity requirements, suggesting short-term solvency concerns. Although debt-to-equity is at a borderline 1.0, the equity base has eroded sharply from prior years, amplifying leverage risk. Negative interest cover further highlights a stressed financial position.
+- **Profitability:** The company reports a 100% gross margin, which is unusual and likely due to no cost of sales recorded or accounting treatment of revenue streams. Operating and net margins are deeply negative, reflecting large operating losses and impairments (£15.3m impairments in 2024). Returns on equity and capital employed are severely negative, indicating value destruction.
 
-**Efficiency:** Inventory turnover is irrelevant as the company does not hold inventory. Receivables days sales outstanding is a moderate 38 days, indicating acceptable receivables management.
+- **Liquidity:** Current and quick ratios are extremely low (0.1%), indicating the company cannot cover short-term liabilities with current assets, a severe liquidity risk.
 
-**Earnings Quality:** Accruals ratio is negative, indicating less reliance on accruals which in pure form might imply decent earnings quality, but given the extreme losses and large impairments, the quality of earnings is overshadowed by non-cash charges and recurring losses.
+- **Leverage:** Debt-to-equity is at 1.0, the upper bound of monitor range, indicating moderate leverage. Interest coverage is negative (-16.6x), showing inability to cover interest expenses from earnings, a sign of financial distress.
 
-**Cash Flows and Financial Position:** Operating cash flow remains negative albeit improved, consistent with ongoing cash burn. The net assets have plummeted heavily from over £15 million to just £1.56 million, reflecting impairments (notably large intangible asset write-downs) and sustained losses. This limits financial flexibility.
+- **Efficiency:** Inventory turnover is zero, likely due to no inventory or no sales of inventory. Days sales outstanding is 38 days, which is healthy and indicates reasonable receivables collection.
 
-**Ownership:** Ownership is concentrated with director Richard Bernstein holding 18.6%, alongside other substantial shareholders. Insider ownership alignment might support financing or strategic initiatives, but raises governance risks regarding minority shareholder influence.
+- **Earnings Quality:** The accruals ratio is negative and passes thresholds, suggesting no earnings manipulation via accruals. However, EBITDA to free cash flow conversion is zero, indicating no conversion of earnings to cash flow, a negative sign. The adjusted vs statutory earnings gap is negligible, indicating no aggressive adjustments.
 
-**Auditor Report Highlights:** The auditor confirms the existence of a material uncertainty related to going concern due to forecast cash shortfalls, dependency on raising further finance, and uncertainties in forecast revenue growth. The impairment of intangible assets and goodwill is a key audit focus due to their significant carrying values and dependency on uncertain future cash flows. The auditor's report is unmodified but highlights these risks clearly.
+- **Asset Quality:** No goodwill on the balance sheet, which is positive. Capex to depreciation ratio is zero, which may indicate underinvestment or asset base shrinkage and should be monitored. Tangible book value is negative £2.8m, indicating net liabilities in tangible assets, a concern for asset backing.
 
-**CEO Commentary:** The CEO acknowledges substantial operating losses, reduced revenues, and significant impairments of intangible assets. Disposal of the Sports in Schools subsidiary and completed equity raises are noted. The report stresses progress in restructuring and regulatory partnerships but no immediate translation into sales or cash flow. The CEO highlights external market pressures, including a bear market in UK asset management affecting spending on new technology.
+- **Cash Flow:** Cash conversion and free cash flow are negative, confirming the company is burning cash and not generating positive cash flow from operations or investments.
 
-**Conclusion:** Insig AI currently demonstrates severe financial difficulties highlighted by deep losses, weak operating and liquidity metrics, ongoing cash burn, and significant intangible impairments reducing equity capital. Valuation multiples are distorted and do not reflect economic reality. Earnings quality is poor in substance despite some favorable accrual measures. Liquidity and interest coverage pose immediate risks to solvency. The concentrated insider ownership could provide some support or fund raising capability but also governance risk.
+- **Revenue Recognition:** Revenue is recognized based on milestones or work completed, with two main streams: machine learning/data services and sports activities (the latter sold in Nov 2023). The revenue recognition policy appears consistent with IFRS 15, but revenue is low and declining (£370k in 2024 vs £694k in 2023).
 
-Without a clear pathway to sustainable revenue growth, improved profitability, and positive cash flow generation, Insig AI’s financial position is fragile and current valuation metrics appear inflated or disconnected from fundamental performance. Investors should be cautious and require robust evidence of operational turnaround before considering investment.
+- **Going Concern:** The directors acknowledge a material uncertainty related to going concern due to funding shortfalls and cash burn. The auditor's report confirms this material uncertainty but does not modify the audit opinion. The company expects to raise further finance and has convertible loan notes due Sept 2025.
+
+- **CEO Commentary:** The CEO reports progress in right-sizing the business and improved partnerships but notes that these have not yet translated into significant revenues. The company completed equity raises totaling over £1.7m in the year and post period. The disposal of Sports in Schools and Elms Group generated a small profit and reduced costs. The CEO highlights the challenging market environment and the need for regulation to drive demand.
+
+- **Ownership:** Ownership is moderately concentrated with the largest shareholder and director Richard Bernstein holding 18.6% plus options, indicating alignment with shareholders. Two directors resigned and one deceased recently, which may impact governance stability.
+
+---
+
+**Conclusion:**
+
+Insig AI is in a financially distressed state with significant operating losses, negative margins, poor liquidity, and negative cash flows. The valuation multiples are distorted by the lack of positive earnings and cash flow, leading to an inflated EV/Revenue multiple. The company’s balance sheet shows a large accumulated deficit and moderate leverage. While the gross margin is high, this is overshadowed by massive impairments and operating losses.
+
+The company faces significant challenges in returning to profitability and generating positive cash flow. Liquidity and leverage metrics indicate financial risk, and negative returns on equity and capital employed suggest value destruction. The going concern material uncertainty highlights the risk of funding shortfalls.
+
+The ownership structure shows committed insiders, which may support governance and strategic execution, but recent director resignations may affect stability.
+
+**Recommendation:** Investors should be cautious and monitor closely for operational improvements, cash flow generation, and successful fundraising before considering investment. The current financials do not support a sustainable or repeatable earnings base, and cash conversion is poor. Further information on management’s detailed turnaround plans, segment profitability, and future projections would be helpful to refine the investment thesis.
 
 ---
 
 Victoria Clarke  
 Financial Modeling & Valuation Expert  
-2025-09-02 17:09:29
+2025-09-04 12:44:15

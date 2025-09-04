@@ -8,13 +8,20 @@ memory disabled to prevent context contamination between tasks.
 import os
 from pathlib import Path
 from typing import Any, Dict, Optional
-
+from pydantic import BaseModel, Field
 from crewai import Agent, Crew, LLM, Process, Task
 from crewai.project import CrewBase, agent, before_kickoff, crew, task
 from crewai_tools import FileReadTool
 from dotenv import load_dotenv
-
 from .ratio_calc import FinancialRatioCalculator
+
+# Create a structured output for Richard, so the report looks the same everytime
+class RichardOutput(BaseModel):
+    company: str = Field(description="The company being analysed")
+    findings: str = Field(description="Your key findings about the company")
+    relevance: str = Field(description="Why these findings are relevant or important")
+    conclusion: str = Field(description="Your conclusion for the company based on your findings")
+
 
 # Load environment variables from .env file
 load_dotenv()
@@ -306,6 +313,16 @@ class InsigAnalystDemo():
             allow_delegation=False,
             llm=llm
         )
+    
+    @agent
+    def formatter(self) -> Agent:
+        """Transform research reports into beautifully formatted, readable markdown documents"""
+        return Agent(
+            config=self.agents_config['formatter'], # type: ignore[index]
+            verbose=True,
+            allow_delegation=False,
+            llm=llm
+        )
 
     # To learn more about structured task outputs,
     # task dependencies, and task callbacks, check out the documentation:
@@ -342,7 +359,15 @@ class InsigAnalystDemo():
     def final_analysis_task(self) -> Task:
         return Task(
             config=self.tasks_config['final_analysis_task'], # type: ignore[index]
-            callback=clear_context_callback  # Clear context after this task
+            callback=clear_context_callback,  # Clear context after this task
+            output_json=RichardOutput, # Structured output for JSON file
+        )
+    
+    @task
+    def formatting_task(self) -> Task:
+        return Task(
+            config=self.tasks_config['formatting_task'], # type: ignore[index]
+            callback=clear_context_callback,  # Clear context after this task
         )
 
     @crew
