@@ -1,98 +1,56 @@
-| Metric                     | Value           | Threshold (Pass/Monitor/Fail) | Verdict          |
-|----------------------------|-----------------|-------------------------------|------------------|
-| **Valuation Ratios**       |                 |                               |                  |
-| P/E Ratio                  | N/A             | <10.0 / 10.0-15.0 / >15.0     | N/A              |
-| EV/EBITDA                  | 67.6x           | <5.0 / 5.0-7.5 / >7.5         | FAIL             |
-| EV/EBIT                   | 67.6x           | <7.0 / 7.0-10.0 / >10.0       | FAIL             |
-| EV/Revenue                 | 0.8x            | >1.0 / 2.0-1.0 / <2.0         | FAIL             |
-| Price to FCF               | 3.7x            | >15.0 / 30.0-15.0 / <30.0     | FAIL             |
-| FCF Yield                  | 26.9%           | >10.0 / 6.0-10.0 / <6.0       | PASS             |
-| **Profitability**          |                 |                               |                  |
-| Gross Margin               | 39.2%           | >40.0 / 30.0-40.0 / <30.0     | MONITOR          |
-| Operating Margin           | 1.5%            | >15.0 / 5.0-15.0 / <5.0       | FAIL             |
-| Net Margin                 | -3.9%           | >5.0 / 0.0-5.0 / <0.0         | FAIL             |
-| ROE                       | -13.2%          | >10.0 / 0.0-10.0 / <0.0       | FAIL             |
-| ROCE                      | 1.9%            | >15.0 / 8.0-15.0 / <8.0       | FAIL             |
-| **Liquidity**              |                 |                               |                  |
-| Current Ratio              | 1.6             | >1.5 / 1.0-1.5 / <1.0         | PASS             |
-| Quick Ratio                | 0.9             | >1.0 / 0.5-1.0 / <0.5         | MONITOR          |
-| **Leverage**               |                 |                               |                  |
-| Debt-to-Equity             | 1.1             | <0.5 / 0.5-1.0 / >1.0         | FAIL             |
-| Interest Coverage          | 0.2x            | >4.0 / 2.0-4.0 / <2.0         | FAIL             |
-| Net Debt/EBITDA            | 24.5            | <2.5 / 2.5-3.5 / >3.5         | FAIL             |
-| **Efficiency**             |                 |                               |                  |
-| Inventory Turnover         | 4.2x            | >4.0 / 2.0-4.0 / <2.0         | PASS             |
-| Days Sales Outstanding     | 22 days         | <60.0 / 60.0-90.0 / >90.0     | PASS             |
-| **Earnings Quality**       |                 |                               |                  |
-| Accruals Ratio             | -31.2%          | <10.0 / 10.0-20.0 / >20.0     | PASS             |
-| EBITDA to FCF Conversion   | 1158.3%         | >70.0 / 40.0-70.0 / <40.0     | PASS             |
-| Adjusted vs Statutory Gap  | 0.0             | <10.0 / 10.0-20.0 / >20.0     | PASS             |
-| **Asset Quality**          |                 |                               |                  |
-| Goodwill/Assets            | 17.6%           | <30.0 / 30.0-50.0 / >50.0     | PASS             |
-| Capex/Depreciation         | 0.0             | 0.8-1.2 / <0.8 or >1.2 / >1.5 | MONITOR          |
-| Tangible Book Value        | £72.7m          | >50.0 / 0.0-50.0 / <0.0       | PASS             |
-| **Cash Flow**              |                 |                               |                  |
-| Cash Conversion            | 5.8             | >1.0 / 0.8-1.0 / <0.8         | PASS             |
-| Free Cash Flow             | £35.3m          | >0.0 / 5.0-0.0 / <5.0         | PASS             |
+| Metric Category          | Metric                      | Value / Observation                          | Assessment (Sustainable/Repeatable/Cash-Convertible/Inflated) | Comments & Analysis                                                                                                         | Source Link                                                                                  |
+|-------------------------|-----------------------------|---------------------------------------------|----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| **Valuation Ratios**     | EV/EBITDA                   | 67.6x (FAIL)                                | Inflated                                                       | Extremely high EV/EBITDA multiple indicates market overvaluation relative to earnings. EBITDA is low and volatile.          | data/XPP/XPP_agent_ratios.md (Valuation Ratios section)                                    |
+|                         | EV/EBIT                     | 67.6x (FAIL)                                | Inflated                                                       | Same as EV/EBITDA, reflects weak operating profit and high valuation.                                                      | data/XPP/XPP_agent_ratios.md                                                                  |
+|                         | EV/Revenue                  | 0.8x (FAIL)                                 | Inflated                                                       | Below threshold, indicating low revenue valuation relative to enterprise value, possibly due to weak profitability.         | data/XPP/XPP_agent_ratios.md                                                                  |
+|                         | Price to FCF                | 3.7x (FAIL)                                 | Inflated                                                       | Very low price to free cash flow ratio, inconsistent with strong FCF yield, suggests market pricing anomalies.              | data/XPP/XPP_agent_ratios.md                                                                  |
+|                         | FCF Yield                   | 26.9% (PASS)                               | Cash-Convertible                                              | Strong free cash flow yield indicates good cash generation relative to market cap.                                          | data/XPP/XPP_agent_ratios.md                                                                  |
+| **Profitability Ratios** | Gross Margin                | 39.2% (MONITOR)                            | Monitor                                                       | Slightly below pass threshold, margin pressure likely from cost or pricing challenges.                                      | data/XPP/XPP_agent_ratios.md                                                                  |
+|                         | Operating Margin            | 1.5% (FAIL)                                | Inflated                                                       | Very low operating margin, not sustainable for long-term profitability.                                                    | data/XPP/XPP_agent_ratios.md                                                                  |
+|                         | Net Margin                  | -3.9% (FAIL)                               | Inflated                                                       | Negative net margin indicates losses after finance costs and tax, unsustainable.                                            | data/XPP/XPP_agent_ratios.md                                                                  |
+|                         | ROE                        | -13.2% (FAIL)                              | Inflated                                                       | Negative return on equity, poor capital efficiency.                                                                         | data/XPP/XPP_agent_ratios.md                                                                  |
+|                         | ROCE                       | 1.9% (FAIL)                               | Inflated                                                       | Very low return on capital employed, indicating poor operational returns.                                                  | data/XPP/XPP_agent_ratios.md                                                                  |
+| **Liquidity Ratios**     | Current Ratio               | 1.6 (PASS)                                | Sustainable                                                  | Adequate short-term liquidity to cover liabilities.                                                                         | data/XPP/XPP_agent_ratios.md                                                                  |
+|                         | Quick Ratio                 | 0.9 (MONITOR)                            | Monitor                                                       | Slightly below ideal, some reliance on inventory for liquidity.                                                             | data/XPP/XPP_agent_ratios.md                                                                  |
+| **Leverage Ratios**      | Debt-to-Equity              | 1.1 (FAIL)                               | Inflated                                                       | High leverage, above acceptable range, increases financial risk.                                                           | data/XPP/XPP_agent_ratios.md                                                                  |
+|                         | Interest Coverage           | 0.2x (FAIL)                             | Inflated                                                       | Very weak ability to cover interest expense from operating earnings, risk of distress.                                      | data/XPP/XPP_agent_ratios.md                                                                  |
+|                         | Net Debt/EBITDA             | 24.5x (FAIL)                            | Inflated                                                       | Extremely high leverage relative to EBITDA, unsustainable.                                                                  | data/XPP/XPP_agent_ratios.md                                                                  |
+| **Efficiency Ratios**    | Inventory Turnover          | 4.2x (PASS)                             | Sustainable                                                  | Efficient inventory management, turnover above threshold.                                                                   | data/XPP/XPP_agent_ratios.md                                                                  |
+|                         | Days Sales Outstanding      | 22 days (PASS)                         | Sustainable                                                  | Strong receivables collection efficiency.                                                                                   | data/XPP/XPP_agent_ratios.md                                                                  |
+| **Earnings Quality Ratios** | Accruals Ratio           | -31.2% (PASS)                          | Cash-Convertible                                            | Negative accruals ratio suggests conservative accounting or cash-based earnings, positive for quality.                      | data/XPP/XPP_agent_ratios.md                                                                  |
+|                         | EBITDA to FCF Conversion    | 1158.3% (PASS)                        | Cash-Convertible                                            | Very high conversion of EBITDA to free cash flow, indicating strong cash earnings quality.                                  | data/XPP/XPP_agent_ratios.md                                                                  |
+|                         | Adjusted vs Statutory Gap   | 0.0 (PASS)                           | Cash-Convertible                                            | No material difference between adjusted and statutory earnings, indicating transparency.                                    | data/XPP/XPP_agent_ratios.md                                                                  |
+| **Asset Quality Ratios** | Goodwill/Assets            | 17.6% (PASS)                          | Sustainable                                                  | Moderate goodwill, no excessive impairment risk.                                                                             | data/XPP/XPP_agent_ratios.md                                                                  |
+|                         | Capex/Depreciation          | 0.0 (MONITOR)                        | Monitor                                                       | Low capex relative to depreciation may indicate underinvestment or timing issues.                                           | data/XPP/XPP_agent_ratios.md                                                                  |
+|                         | Tangible Book Value         | £72.7m (PASS)                        | Sustainable                                                  | Solid tangible book value supports balance sheet strength.                                                                  | data/XPP/XPP_agent_ratios.md                                                                  |
+| **Cash Flow Ratios**     | Cash Conversion             | 5.8 (PASS)                          | Cash-Convertible                                            | Excellent conversion of profits to cash, strong liquidity.                                                                   | data/XPP/XPP_agent_ratios.md                                                                  |
+|                         | Free Cash Flow              | £35.3m (PASS)                      | Cash-Convertible                                            | Positive and strong free cash flow supports operations and debt servicing.                                                  | data/XPP/XPP_agent_ratios.md                                                                  |
+| **Ownership**            | Free Float                  | 94.88%                                | Sustainable                                                  | High free float supports liquidity and reduces risk of price manipulation.                                                  | data/XPP/XPP_notes.md (Ownership section)                                                    |
+|                         | Major Shareholders          | Institutional with no controlling stake | Sustainable                                                  | Balanced institutional ownership with activist presence may drive improvements.                                            | data/XPP/XPP_notes.md                                                                        |
 
-Summary of Analysis:
+Summary Analysis:
 
-- Valuation ratios show a stark disconnect: extremely high EV/EBITDA and EV/EBIT multiples (67.6x) indicate the market prices XP Power at a very high premium relative to earnings, which is a fail. The Price to Free Cash Flow ratio is also poor at 3.7x, failing the threshold. However, the Free Cash Flow Yield is strong at 26.9%, a pass, suggesting the company generates substantial cash relative to its market price, indicating potential undervaluation on a cash basis.
+XP Power exhibits a mixed financial profile. The company is currently loss-making on a net basis with very weak profitability metrics (operating margin 1.5%, net margin -3.9%, negative ROE and ROCE). These indicate that the company is not generating sustainable economic returns on its capital or equity. The valuation multiples are extremely high (EV/EBITDA and EV/EBIT at 67.6x), suggesting the market is pricing in a turnaround or growth that is not yet realized in the fundamentals.
 
-- Profitability metrics are weak. Gross margin at 39.2% is just below the pass threshold, flagged as monitor. Operating margin is very low at 1.5%, and net margin is negative at -3.9%, both failing. Returns on equity and capital employed are negative or very low, indicating poor profitability and operational challenges.
+Liquidity is adequate with a current ratio of 1.6 and efficient working capital management evidenced by strong inventory turnover and low DSO. Earnings quality appears strong with a negative accruals ratio and very high EBITDA to free cash flow conversion, indicating cash earnings are reliable and not distorted by aggressive accruals.
 
-- Liquidity is adequate with a current ratio of 1.6 (pass) and quick ratio of 0.9 (monitor), showing some reliance on inventory but overall sufficient short-term liquidity.
+Leverage is a significant concern, with debt-to-equity at 1.1, interest coverage at 0.2x, and net debt to EBITDA at 24.5x, all indicating high financial risk and potential distress. The company has taken steps to improve liquidity and reduce debt, including equity issuance and strong cash flow generation, but leverage remains elevated.
 
-- Leverage is a significant concern. Debt-to-equity at 1.1 is above the pass threshold (fail), interest coverage is very low at 0.2x (fail), and net debt to EBITDA is extremely high at 24.5x (fail), indicating high financial risk and difficulty covering interest expenses.
+Asset quality is reasonable with moderate goodwill and solid tangible book value, though capex is low relative to depreciation, which may impact future asset renewal and growth.
 
-- Efficiency ratios are strong, with inventory turnover at 4.2x and days sales outstanding at 22 days, both passing, indicating effective working capital management.
+The CEO report confirms challenging market conditions with some signs of recovery, but revenue and operating profit have declined year-over-year. The company is managing costs and cash well but faces headwinds from currency and market destocking. The auditor's report contains no qualifications or concerns, supporting the reliability of the financials.
 
-- Earnings quality is strong. The accruals ratio is negative at -31.2% (pass), suggesting conservative earnings recognition. EBITDA to free cash flow conversion is very high at 1158.3% (pass), indicating excellent cash conversion. The adjusted vs statutory earnings gap is zero (pass), showing no significant earnings manipulation.
-
-- Asset quality is acceptable. Goodwill to assets ratio is moderate at 17.6% (pass), tangible book value is strong at £72.7m (pass). Capex to depreciation is zero (monitor), which may indicate underinvestment or timing differences.
-
-- Cash flow metrics are very positive, with a cash conversion ratio of 5.8 (pass) and positive free cash flow of £35.3m (pass), supporting the company's cash generation strength despite earnings weakness.
-
-Additional Context from Notes:
-
-- The company has a revolving credit facility of $140m (£102m) maturing in March 2027, with £78m drawn and £24m undrawn as of June 2025.
-
-- Financial covenants were amended in May 2025 to a leverage ratio (Net Debt to Adjusted EBITDA) max 3.0 and interest cover min 3.0, tested quarterly.
-
-- Base and downside case scenarios show the company remains compliant with covenants and has adequate liquidity, with some modest headroom in severe downside cases.
-
-- Revenue declined 5% from 2024 to 2025 in the base case, with some recovery expected in 2026.
-
-- The company is exposed to foreign exchange risk due to USD-denominated debt.
-
-Auditor's Report:
-
-- The interim financial statements have been reviewed (not audited) by PwC with no material misstatements found.
-
-Ownership Structure (from notes):
-
-- XP Power has a single share class with high free float (~94.88%) and significant institutional ownership by Aberforth Partners LLP (10.84%), Van Lanschot Kempen (9.5%), Steel Partners (7.57%), and others.
-
-- This ownership profile supports good market liquidity and active institutional oversight.
+Ownership is broadly institutional with a high free float and no controlling shareholder, which supports good governance and market liquidity. The presence of activist investors may pressure management to improve performance.
 
 Conclusion:
 
-XP Power presents a mixed financial profile. The company struggles with profitability and high leverage, raising financial risk concerns. However, it demonstrates strong cash flow generation and efficient working capital management, which supports its operational cash health. The market valuation is high on earnings multiples but low on free cash flow multiples, suggesting the market prices in future improvement or strategic value.
+XP Power's financials reveal a company under significant operational and financial stress, with weak profitability and high leverage. However, strong cash flow generation and efficient working capital management provide a foundation for potential recovery. The market valuation appears disconnected from current earnings quality and profitability, implying risk for investors relying solely on headline multiples.
 
-The company’s liquidity and covenant compliance appear adequate with prudent going concern assumptions. Institutional ownership and high free float provide governance and liquidity benefits.
+Investors should be cautious and monitor improvements in operating margins, debt reduction, and interest coverage. The strong cash conversion and earnings quality metrics are positive signs but do not offset the risks from poor profitability and high leverage.
 
-Investors should be cautious of the high leverage and weak profitability but may find value in the strong cash flow generation. Monitoring operational improvements and leverage reduction will be critical.
-
-Sources:
-
-- Financial Ratios: data/XPP/XPP_agent_ratios.md  
-- Income Statement: data/XPP/XPP_income_statement.md  
-- Cash Flow Statement: data/XPP/XPP_cashflow_statement.md  
-- Balance Sheet: data/XPP/XPP_balancesheet_statement.md  
-- Notes: data/XPP/XPP_notes.md  
-- Auditor Report: data/XPP/XPP_auditor_report.md  
+No additional documents are required for this analysis.
 
 Signed off by:  
 Daniel Osei  
 Forensic Accounting & Earnings Quality Specialist  
-2025-09-03 13:38:21
+2025-09-03 14:39:18

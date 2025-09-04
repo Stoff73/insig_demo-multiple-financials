@@ -1,0 +1,196 @@
+# Tasks Configuration
+
+## Earnings Quality Task
+
+**Description:**  
+You are analysing the {company} as specified by the user.
+
+Read the following files in the output/{ticker} folder which contain all necessary information:
+- `data/{ticker}/{ticker}_agent_ratios.md`
+- `data/{ticker}/{ticker}_auditor_report.md`
+- `data/{ticker}/{ticker}_notes.md`
+- `data/{ticker}/{ticker}_ceo_report.md`
+- `data/{ticker}/{ticker}_income_statement.md`
+
+**DO NOT** use any other information, only use the information in the files specified above.  
+**DO NOT** read any *.pdf files, only look through *.md files.
+
+For this task, look for files with any ownership details, such as results, notes to financials, etc.
+
+**Goal:**  
+To assess whether reported profits are sustainable, repeatable, and cash-convertible or inflated.
+
+Keep this short and concise.
+- **Never** make up any data or add any information into the report that is not in the files provided
+- Do not make anything up or fabricate any data
+- Do not create any additional files, or output files, if there is information you deem important to output, place this in the output file specified
+- Do NOT browse the web or make external calls - use only the provided files
+
+**Expected Output:**
+- A table showing all the metrics which you have used to assess the company, in line with the stated goal, with sustainable, repeatable, cash-convertible or inflated verdict
+- A paragraph summarising the analysis of each of the metrics in context of the company and the information provided
+- You must always provide a conclusion to your analysis
+- Any additional information or documents required if anything is missing
+- You MUST sign off with your full name and role at the end
+- Do not sign for other agents, only your own output
+
+**Agent:** daniel_osei  
+**Output File:** `output/{ticker}/{ticker}_earning_quality.md`
+
+---
+
+## Primary Ratios
+
+**Description:**  
+You are analyzing {company}, in your capacity as a financial modeling and valuation expert, as specified by the user.
+
+Read the following files in the output/{ticker} folder which contain all necessary information:
+- `data/{ticker}/{ticker}_agent_ratios.md`
+- `data/{ticker}/{ticker}_income_statement.md`
+- `data/{ticker}/{ticker}_cashflow_statement.md`
+- `data/{ticker}/{ticker}_balancesheet_statement.md`
+
+**DO NOT** use any other information, only use the information in the files specified above.  
+**DO NOT** read any *.pdf files, only look through *.md files.
+
+**Goal:**  
+The goal is to produce an expert equity valuation and quality analysis on the information provided.
+
+You are to analyze the {ticker}_agent_ratios.md file and give your expert view on whether or not these are material to the current valuation of the company.
+
+For this analysis, the focus is on the valuation ratios as shown in the {ticker}_agent_ratios.md file. Use the ratios and numbers as given in the {ticker}_agent_ratios.md file, do not change these or make up your own numbers.
+
+Keep your report short and concise.
+- **Never** make up any data or add any information into the report that is not in the files provided
+- Do not make anything up or fabricate any data
+- Do not create any additional files, or output files, if there is information you deem important to output, place this in the output file specified
+- Do NOT browse the web or make external calls - use only the provided files in the data/{ticker} folder
+
+**Expected Output:**
+- A formatted table containing the ratios you used in your analysis from the data/{ticker}_agent_ratios.md file
+- A second formatted table with the financial information you used in your analysis, obtained from the provided information in the data/{ticker} folder for {company}
+- A paragraph summarizing the analysis of each of the metrics in context of {company} and the information provided
+- You must always provide a conclusion to your analysis
+- Any additional information or documents required if anything is missing
+- You MUST sign off with your full name and role at the end
+- Do not sign for other agents, only your own output
+
+**Agent:** victoria_clarke  
+**Output File:** `output/{ticker}/{ticker}_valuation.md`
+
+---
+
+## Ownership Task
+
+**Description:**  
+You are analysing the {company} as specified by the user.
+
+Read the following file in the output/{ticker} folder which contains all necessary information:
+- `data/{ticker}/{ticker}_company_ownership.md`
+
+**DO NOT** use any other information, only use the information in the files specified above.  
+**DO NOT** read any *.pdf files, only look through *.md files.
+
+For this task, look for files with any ownership details, such as results, notes to financials, etc.
+
+**Goal:**  
+Using the information provided, provide an ownership diagnostic matrix with the following:
+- Insider Ownership %
+- Recent Insider transactions
+- Ownership changes
+
+Check if there has been any insider transactions on the open market. Any cluster buying (e.g. 3+ insiders within weeks). Any new director buys before appointment. Any option exercises and sells or any outright sells, any option grants.
+
+Keep this short and concise.
+- **Never** make up any data or add any information into the report that is not in the files provided
+- Do not make anything up or fabricate any data
+- Do not create any additional files, or output files, if there is information you deem important to output, place this in the output file specified
+- Do NOT browse the web or make external calls - use only the provided files
+
+**Expected Output:**
+- A formatted table with the above requested metrics, analysis and any additional information you deem necessary
+- A paragraph summarising the analysis of each of the metrics in context of the company and the information provided
+- You must always provide a conclusion to your analysis
+- Any additional information or documents required if anything is missing
+- You MUST sign off with your full name and role at the end
+- Do not sign for other agents, only your own output
+
+**Agent:** victoria_clarke  
+**Output File:** `output/{ticker}/{ticker}_ownership.md`
+
+---
+
+## Balance Sheet Durability Task
+
+**Description:**  
+You are analysing the {company} as specified by the user.
+
+Read the following files in the output/{ticker} folder which contain all necessary information:
+- `data/{ticker}/{ticker}_agent_ratios.md`
+- `data/{ticker}/{ticker}_auditor_report.md`
+- `data/{ticker}/{ticker}_notes.md`
+- `data/{ticker}/{ticker}_balancesheet_statement.md`
+
+**DO NOT** use any other information, only use the information in the files specified above.  
+**DO NOT** read any *.pdf files, only look through *.md files.
+
+For this task, look for files with any ownership details, such as results, notes to financials, etc.
+
+**Goal:**  
+To determine whether the company has:
+- Sufficient liquidity to operate and invest
+- Sustainable leverage to manage downturns
+- Low refinancing or default risk
+- Transparent liabilities, including pensions and leases
+
+Keep this short and concise.
+- **Never** make up any data or add any information into the report that is not in the files provided
+- Do not make anything up or fabricate any data
+- Do not create any additional files, or output files, if there is information you deem important to output, place this in the output file specified
+- Do NOT browse the web or make external calls - use only the provided files
+
+**Expected Output:**
+- A table showing all the metrics which you have used to assess the company, in line with the stated goal
+- A table showing the metrics above and your assessment and verdict
+- A paragraph summarising the analysis of each of the metrics in context of the company and the information provided
+- You must always provide a conclusion to your analysis
+- Any additional information or documents required if anything is missing
+- You MUST sign off with your full name and role at the end
+- Do not sign for other agents, only your own output
+
+**Agent:** daniel_osei  
+**Output File:** `output/{ticker}/{ticker}_balancesheet_durability.md`
+
+---
+
+## Final Analysis Task
+
+**Description:**  
+You are analysing the {company} as specified by the user.
+
+Read the following files in the output/{ticker} folder which contain all necessary information:
+- `output/{ticker}/{ticker}_balancesheet_durability.md`
+- `output/{ticker}/{ticker}_earning_quality.md`
+- `output/{ticker}/{ticker}_ownership.md`
+- `output/{ticker}/{ticker}_valuation.md`
+
+**Goal:**  
+Highlight mispricing signals (valuation, sentiment, catalysts) or any other information you deem important. Red flags and required further work.
+
+This is not a full investment memo.
+- **Never** make up any data or add any information into the report that is not in the files provided
+- Do not make anything up or fabricate any data
+- Do not create any additional files, or output files, if there is information you deem important to output, place this in the output file specified
+- Do NOT browse the web or make external calls - use only the provided files
+
+**Expected Output:**
+- A 1-2 page report describing the reasons you came to a decision about the company, given the information presented in the initial_screening.md document
+- Describe how you arrived at your decision in line with the given metrics
+- You must always provide a conclusion to your analysis
+- You MUST sign off with your full name and role at the end
+- Do not sign for other agents, only your own output
+- Do **NOT** provide a recommendation, or any substance on what to do next
+- Any additional information or documents required if anything is missing
+
+**Agent:** richard  
+**Output File:** `output/{ticker}/{ticker}_final_analysis.md`

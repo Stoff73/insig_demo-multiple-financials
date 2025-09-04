@@ -7,8 +7,8 @@ Data Sources: XPP.json
 
 | Metric | Value | Source | Retrieved |
 |--------|-------|--------|----------|
-| **Share Price** | £9.20 | Yahoo Finance | 2025-09-03 13:38:21 |
-| **Market Cap** | £262.9m | Yahoo Finance | 2025-09-03 13:38:21 |
+| **Share Price** | £9.20 | Yahoo Finance | 2025-09-03 14:39:18 |
+| **Market Cap** | £262.9m | Yahoo Finance | 2025-09-03 14:39:18 |
 | **Enterprise Value** | £412.2m | Calculated | - |
 | **Shares Outstanding** | 0.0m | Financial Reports | - |
 

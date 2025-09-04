@@ -7,8 +7,8 @@ Data Sources: STVG.json
 
 | Metric | Value | Source | Retrieved |
 |--------|-------|--------|----------|
-| **Share Price** | £1.25 | Yahoo Finance | 2025-09-03 11:08:44 |
-| **Market Cap** | £56.9m | Yahoo Finance | 2025-09-03 11:08:44 |
+| **Share Price** | £1.25 | Yahoo Finance | 2025-09-04 08:00:02 |
+| **Market Cap** | £56.9m | Yahoo Finance | 2025-09-04 08:00:02 |
 | **Enterprise Value** | £113.0m | Calculated | - |
 | **Shares Outstanding** | 0.0m | Financial Reports | - |
 

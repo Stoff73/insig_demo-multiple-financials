@@ -54,78 +54,195 @@ function Dashboard() {
 
   return (
     <Box>
-      <Typography variant="h4" gutterBottom>
-        Dashboard
-      </Typography>
+      <Box sx={{ mb: 4 }}>
+        <Typography 
+          variant="h4" 
+          gutterBottom
+          sx={{ 
+            fontWeight: 700,
+            color: '#0A2540',
+            mb: 1
+          }}
+        >
+          Dashboard
+        </Typography>
+        <Typography variant="body2" sx={{ color: '#5E6C84' }}>
+          Monitor your financial analysis tasks and reports in real-time
+        </Typography>
+      </Box>
       
       <Grid container spacing={3}>
         <Grid item xs={12} md={3}>
-          <Card>
+          <Card sx={{ 
+            background: 'linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%)',
+            color: '#FFFFFF',
+            position: 'relative',
+            overflow: 'hidden',
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              top: -50,
+              right: -50,
+              width: 150,
+              height: 150,
+              borderRadius: '50%',
+              background: 'rgba(0, 212, 255, 0.1)',
+            }
+          }}>
             <CardContent>
-              <Box display="flex" alignItems="center" mb={1}>
-                <TrendingUp color="primary" sx={{ mr: 1 }} />
-                <Typography color="textSecondary" gutterBottom>
+              <Box display="flex" alignItems="center" mb={2}>
+                <Box sx={{ 
+                  p: 1, 
+                  borderRadius: 1, 
+                  background: 'rgba(0, 212, 255, 0.15)',
+                  display: 'flex',
+                  mr: 2
+                }}>
+                  <TrendingUp sx={{ color: '#00D4FF' }} />
+                </Box>
+                <Typography variant="body2" sx={{ opacity: 0.9 }}>
                   Total Analyses
                 </Typography>
               </Box>
-              <Typography variant="h3">
+              <Typography variant="h3" sx={{ fontWeight: 700 }}>
                 {tasks.length}
+              </Typography>
+              <Typography variant="caption" sx={{ opacity: 0.7 }}>
+                All time
               </Typography>
             </CardContent>
           </Card>
         </Grid>
         
         <Grid item xs={12} md={3}>
-          <Card>
+          <Card sx={{ 
+            background: 'linear-gradient(135deg, #00C48C 0%, #009C6E 100%)',
+            color: '#FFFFFF',
+            position: 'relative',
+            overflow: 'hidden',
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              top: -50,
+              right: -50,
+              width: 150,
+              height: 150,
+              borderRadius: '50%',
+              background: 'rgba(255, 255, 255, 0.1)',
+            }
+          }}>
             <CardContent>
-              <Box display="flex" alignItems="center" mb={1}>
-                <CheckCircle color="success" sx={{ mr: 1 }} />
-                <Typography color="textSecondary" gutterBottom>
+              <Box display="flex" alignItems="center" mb={2}>
+                <Box sx={{ 
+                  p: 1, 
+                  borderRadius: 1, 
+                  background: 'rgba(255, 255, 255, 0.2)',
+                  display: 'flex',
+                  mr: 2
+                }}>
+                  <CheckCircle sx={{ color: '#FFFFFF' }} />
+                </Box>
+                <Typography variant="body2" sx={{ opacity: 0.9 }}>
                   Completed
                 </Typography>
               </Box>
-              <Typography variant="h3">
+              <Typography variant="h3" sx={{ fontWeight: 700 }}>
                 {tasks.filter(t => t.status === TASK_STATUS.COMPLETED).length}
+              </Typography>
+              <Typography variant="caption" sx={{ opacity: 0.7 }}>
+                Successfully finished
               </Typography>
             </CardContent>
           </Card>
         </Grid>
         
         <Grid item xs={12} md={3}>
-          <Card>
+          <Card sx={{ 
+            border: '1px solid #E1E8ED',
+            boxShadow: '0 4px 12px rgba(10, 37, 64, 0.08)',
+          }}>
             <CardContent>
-              <Box display="flex" alignItems="center" mb={1}>
-                <Folder color="primary" sx={{ mr: 1 }} />
-                <Typography color="textSecondary" gutterBottom>
+              <Box display="flex" alignItems="center" mb={2}>
+                <Box sx={{ 
+                  p: 1, 
+                  borderRadius: 1, 
+                  background: 'rgba(0, 101, 255, 0.1)',
+                  display: 'flex',
+                  mr: 2
+                }}>
+                  <Folder sx={{ color: '#0065FF' }} />
+                </Box>
+                <Typography color="textSecondary" variant="body2">
                   Input Files
                 </Typography>
               </Box>
-              <Typography variant="h3">
+              <Typography variant="h3" sx={{ fontWeight: 700, color: '#0A2540' }}>
                 {inputFiles.length}
+              </Typography>
+              <Typography variant="caption" sx={{ color: '#5E6C84' }}>
+                Documents ready
               </Typography>
             </CardContent>
           </Card>
         </Grid>
         
         <Grid item xs={12} md={3}>
-          <Card>
+          <Card sx={{ 
+            border: '1px solid #E1E8ED',
+            boxShadow: '0 4px 12px rgba(10, 37, 64, 0.08)',
+          }}>
             <CardContent>
-              <Box display="flex" alignItems="center" mb={1}>
-                <Description color="secondary" sx={{ mr: 1 }} />
-                <Typography color="textSecondary" gutterBottom>
+              <Box display="flex" alignItems="center" mb={2}>
+                <Box sx={{ 
+                  p: 1, 
+                  borderRadius: 1, 
+                  background: 'rgba(0, 212, 255, 0.1)',
+                  display: 'flex',
+                  mr: 2
+                }}>
+                  <Description sx={{ color: '#00D4FF' }} />
+                </Box>
+                <Typography color="textSecondary" variant="body2">
                   Reports
                 </Typography>
               </Box>
-              <Typography variant="h3">
+              <Typography variant="h3" sx={{ fontWeight: 700, color: '#0A2540' }}>
                 {outputFiles.length}
+              </Typography>
+              <Typography variant="caption" sx={{ color: '#5E6C84' }}>
+                Generated reports
               </Typography>
             </CardContent>
           </Card>
         </Grid>
 
         <Grid item xs={12} md={6}>
-          <Paper sx={{ p: 2, height: '400px', overflow: 'auto' }}>
-            <Typography variant="h6" gutterBottom>
+          <Paper sx={{ 
+            p: 3, 
+            height: '400px', 
+            overflow: 'auto',
+            background: '#FFFFFF',
+            border: '1px solid #E1E8ED'
+          }}>
+            <Typography 
+              variant="h6" 
+              gutterBottom
+              sx={{ 
+                fontWeight: 600,
+                color: '#0A2540',
+                mb: 2,
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1
+              }}
+            >
+              <Box sx={{ 
+                width: 4, 
+                height: 24, 
+                background: 'linear-gradient(180deg, #00D4FF 0%, #0065FF 100%)',
+                borderRadius: 1,
+                mr: 1
+              }} />
               Recent Analyses
             </Typography>
             <List>
@@ -168,8 +285,32 @@ function Dashboard() {
         </Grid>
 
         <Grid item xs={12} md={6}>
-          <Paper sx={{ p: 2, height: '400px', overflow: 'auto' }}>
-            <Typography variant="h6" gutterBottom>
+          <Paper sx={{ 
+            p: 3, 
+            height: '400px', 
+            overflow: 'auto',
+            background: '#FFFFFF',
+            border: '1px solid #E1E8ED'
+          }}>
+            <Typography 
+              variant="h6" 
+              gutterBottom
+              sx={{ 
+                fontWeight: 600,
+                color: '#0A2540',
+                mb: 2,
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1
+              }}
+            >
+              <Box sx={{ 
+                width: 4, 
+                height: 24, 
+                background: 'linear-gradient(180deg, #00D4FF 0%, #0065FF 100%)',
+                borderRadius: 1,
+                mr: 1
+              }} />
               Latest Reports
             </Typography>
             <List>
