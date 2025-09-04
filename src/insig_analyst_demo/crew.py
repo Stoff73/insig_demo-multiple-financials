@@ -1,41 +1,80 @@
-from crewai import Agent, Crew, Process, Task, LLM
-from crewai.project import CrewBase, agent, crew, task, before_kickoff
-from typing import Dict, Any, Optional
-from .ratio_calc import FinancialRatioCalculator
-from dotenv import load_dotenv
+"""CrewAI implementation for Insig Analyst financial analysis.
+
+This module defines the crew structure with specialized agents and tasks
+for analyzing company financial data. It uses a sequential process with
+memory disabled to prevent context contamination between tasks.
+"""
+
 import os
 from pathlib import Path
+from typing import Any, Dict, Optional
+
+from crewai import Agent, Crew, LLM, Process, Task
+from crewai.project import CrewBase, agent, before_kickoff, crew, task
 from crewai_tools import FileReadTool
+from dotenv import load_dotenv
+
+from .ratio_calc import FinancialRatioCalculator
 
 # Load environment variables from .env file
 load_dotenv()
 
-# Set the model and temperature
+# Set the model and temperature for all agents
 llm = LLM(
     model="gpt-4.1-mini",
     temperature=0,
 )
 
-# Instantiate tools
-agent_ratios_read_tool = FileReadTool(file_path='./data/{ticker}/{ticker}_agent_ratios.md')
-income_read_tool = FileReadTool(file_path='./data/{ticker}/{ticker}_income_statement.md')
-cashflow_read_tool = FileReadTool(file_path='./data/{ticker}/{ticker}_cashflow_statement.md')
-balance_sheet_read_tool = FileReadTool(file_path='./data/{ticker}/{ticker}_balancesheet_statement.md')
-notes_read_tool = FileReadTool(file_path='./data/{ticker}/{ticker}_notes.md')
-auditor_read_tool = FileReadTool(file_path='./data/{ticker}/{ticker}_auditor_report.md')
-ceo_read_tool = FileReadTool(file_path='./data/{ticker}/{ticker}_ceo_report.md')
-ownership_analysis_read_tool = FileReadTool(file_path='./data/{ticker}/{ticker}_company_ownership.md')
-durability_read_tool = FileReadTool(file_path='./output/{ticker}/{ticker}_balancesheet_durability.md')
-quality_read_tool = FileReadTool(file_path='./output/{ticker}/{ticker}_earning_quality.md')
-valuation_read_tool = FileReadTool(file_path='./output/{ticker}/{ticker}_ownership.md')
-ownership_read_tool = FileReadTool(file_path='./output/{ticker}/{ticker}_valuation.md')
+# Instantiate file reading tools for data access
+agent_ratios_read_tool = FileReadTool(
+    file_path='./data/{ticker}/{ticker}_agent_ratios.md'
+)
+income_read_tool = FileReadTool(
+    file_path='./data/{ticker}/{ticker}_income_statement.md'
+)
+cashflow_read_tool = FileReadTool(
+    file_path='./data/{ticker}/{ticker}_cashflow_statement.md'
+)
+balance_sheet_read_tool = FileReadTool(
+    file_path='./data/{ticker}/{ticker}_balancesheet_statement.md'
+)
+notes_read_tool = FileReadTool(
+    file_path='./data/{ticker}/{ticker}_notes.md'
+)
+auditor_read_tool = FileReadTool(
+    file_path='./data/{ticker}/{ticker}_auditor_report.md'
+)
+ceo_read_tool = FileReadTool(
+    file_path='./data/{ticker}/{ticker}_ceo_report.md'
+)
+ownership_analysis_read_tool = FileReadTool(
+    file_path='./data/{ticker}/{ticker}_company_ownership.md'
+)
+durability_read_tool = FileReadTool(
+    file_path='./output/{ticker}/{ticker}_balancesheet_durability.md'
+)
+quality_read_tool = FileReadTool(
+    file_path='./output/{ticker}/{ticker}_earning_quality.md'
+)
+valuation_read_tool = FileReadTool(
+    file_path='./output/{ticker}/{ticker}_ownership.md'
+)
+ownership_read_tool = FileReadTool(
+    file_path='./output/{ticker}/{ticker}_valuation.md'
+)
 
-# If you want to run a snippet of code before or after the crew starts,
-# you can use the @before_kickoff and @after_kickoff decorators
-# https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
-
-def clear_context_callback(output):
-    """Callback to clear context after each task"""
+def clear_context_callback(output: Any) -> Any:
+    """Callback to clear context after each task.
+    
+    This prevents context contamination between tasks by resetting
+    the crew's memory after each task completes.
+    
+    Args:
+        output: The output from the completed task.
+    
+    Returns:
+        The unchanged task output.
+    """
     # Access the crew instance and reset memories
     if hasattr(output, 'agent') and hasattr(output.agent, 'crew'):
         crew_instance = output.agent.crew
@@ -43,13 +82,23 @@ def clear_context_callback(output):
             crew_instance.reset_memories(command_type='all')
     return output
 
-# Store the current ticker for file path resolution
-current_ticker = None
-current_data_dir = None
+# Global variables for current analysis context
+current_ticker: Optional[str] = None
+current_data_dir: Optional[str] = None
 
 @CrewBase
 class InsigAnalystDemo():
-    """Insig Analyst crew"""
+    """Insig Analyst crew for financial analysis.
+    
+    This crew performs sequential analysis of company financial data
+    using specialized agents for different aspects of financial analysis.
+    
+    Attributes:
+        company_ticker: The ticker symbol for the company being analyzed.
+        company_name: The full name of the company.
+        agents_config: Path to agents configuration file.
+        tasks_config: Path to tasks configuration file.
+    """
     
     company_ticker: Optional[str] = None  # Will be set by backend
     company_name: Optional[str] = None  # Will be set by backend
@@ -58,17 +107,28 @@ class InsigAnalystDemo():
     tasks_config = 'config/tasks.yaml'
     
     @before_kickoff
-    def calculate_financial_ratios(self, inputs: Dict[str, Any]) -> Dict[str, Any]:
-        """Calculate financial ratios and set up file tools for the specific company
+    def calculate_financial_ratios(
+        self, inputs: Dict[str, Any]
+    ) -> Dict[str, Any]:
+        """Calculate financial ratios before crew execution.
         
         This method implements the appflow.md requirements:
         1. Check for {ticker}.json file
         2. Fetch market data if JSON exists, or all data if not
         3. Save data to {ticker}.json
         4. Calculate all ratios and create {ticker}_all_ratios.md
-        5. Create {ticker}_agent_ratios.md based on {ticker}_ratio_rules.md
+        5. Create {ticker}_agent_ratios.md based on rules
         6. Validate ratios (check if >20% are 0 or missing)
         7. Check for required financial documents
+        
+        Args:
+            inputs: Input parameters including ticker and company.
+        
+        Returns:
+            Updated inputs dictionary.
+        
+        Raises:
+            ValueError: If ticker symbol is not provided.
         """
         
         global current_ticker, current_data_dir
@@ -78,7 +138,10 @@ class InsigAnalystDemo():
         company_name = inputs.get('company', 'Unknown Company')
         
         if not ticker_input:
-            raise ValueError("Ticker symbol is required but not provided in inputs. Please specify a ticker.")
+            raise ValueError(
+                "Ticker symbol is required but not provided in inputs. "
+                "Please specify a ticker."
+            )
         
         self.company_ticker = ticker_input
         self.company_name = company_name
@@ -105,13 +168,22 @@ class InsigAnalystDemo():
         
         # Step 1: Check for {ticker}.json file (as per appflow.md)
         json_file_path = data_path / f'{ticker.lower()}.json'
-        ticker_symbol = ticker_input.upper() if '.' in ticker_input else f'{ticker_input.upper()}.L'
+        ticker_symbol = (
+            ticker_input.upper() if '.' in ticker_input 
+            else f'{ticker_input.upper()}.L'
+        )
         
-        # Step 2-3: Data fetching logic would go here (not implementing tools yet)
+        # Step 2-3: Data fetching logic (not implementing tools yet)
         # For now, we just check if JSON exists
         if not json_file_path.exists():
-            print(f"\nWarning: {json_file_path} not found. Please provide financial data in JSON format.")
-            print(f"The JSON file should contain market_data, income_statement, balance_sheet, and cash_flow sections.")
+            print(
+                f"\nWarning: {json_file_path} not found. "
+                f"Please provide financial data in JSON format."
+            )
+            print(
+                f"The JSON file should contain market_data, "
+                f"income_statement, balance_sheet, and cash_flow sections."
+            )
         else:
             print(f"\nFound financial data: {json_file_path}")
         

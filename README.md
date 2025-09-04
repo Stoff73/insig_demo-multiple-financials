@@ -1,7 +1,16 @@
 # Financial Analysis System
 
 A sophisticated financial analysis platform powered by CrewAI that combines multi-agent AI analysis with financial data to evaluate any company. The system uses ticker-based organization with company-specific configurations and data management.
-A financial analysis platform powered by CrewAI that combines multi-agent AI analysis with real-time market data to evaluate any company. The system uses ticker-based organization for analyzing multiple companies with company-specific configurations and data management.
+
+## Code Quality
+
+This codebase follows the **Google Python Style Guide** with:
+- Comprehensive docstrings (Google format) for all modules, classes, and functions
+- Type hints for all function parameters and returns
+- Properly organized imports (standard library, third-party, local)
+- Line length limits (80-100 characters)
+- Specific exception handling (no bare except clauses)
+- Consistent naming conventions (module_name, ClassName, function_name, CONSTANT_NAME)
 
 ## Features
 
@@ -35,6 +44,11 @@ A financial analysis platform powered by CrewAI that combines multi-agent AI ana
 - **Node.js**: Version 16 or higher with npm
 - **Git**: For cloning the repository
 - **Operating System**: macOS, Linux, or Windows
+
+### Code Quality Tools (Optional)
+- **pylint**: For Python style checking against Google Style Guide
+- **mypy**: For static type checking
+- **black**: For code formatting (optional)
 
 ### Python Dependencies (automatically installed)
 - FastAPI - Web framework for the backend API
@@ -114,6 +128,16 @@ python -c "import fastapi, crewai, yfinance; print('Python dependencies OK')"
 cd frontend && npm list react && cd ..
 ```
 
+7. **Optional: Install code quality tools**
+```bash
+# Install linting and type checking tools
+pip install pylint mypy black
+
+# Run style checks
+pylint src/ backend/ --disable=C0114,C0115,C0116  # Disable docstring warnings for initial check
+mypy src/ backend/ --ignore-missing-imports
+```
+
 ## Running the Application
 
 ### Full Application (Recommended)
@@ -126,11 +150,14 @@ source .venv/bin/activate  # On macOS/Linux
 
 # Start both backend and frontend
 python run_app.py
+# Or directly with venv Python:
+.venv/bin/python run_app.py
 ```
 
 The application will start:
 - Backend API at http://localhost:8000
-- Frontend at http://localhost:3000
+- Frontend at http://localhost:5173 (Vite shows port 3000 but actually uses 5173)
+- API Docs at http://localhost:8000/docs
 
 Open your browser and navigate to http://localhost:3000 to access the web interface.
 
@@ -138,8 +165,8 @@ Open your browser and navigate to http://localhost:3000 to access the web interf
 
 **Terminal 1 - Backend:**
 ```bash
-# Start the API server
-python -m uvicorn backend.main:app --reload --port 8000
+# Start the API server (without --reload to avoid subprocess issues)
+python -m uvicorn backend.main:app --host 0.0.0.0 --port 8000
 ```
 
 **Terminal 2 - Frontend:**
@@ -199,11 +226,16 @@ The system follows a structured data flow to ensure accurate and up-to-date fina
 
 ```
 insig_analyst_demo/
-├── backend/                    # FastAPI backend
-│   ├── main.py                # API server with ticker support
+├── run_app.py                 # Application launcher (handles both services)
+├── backend/                    # FastAPI backend (Google Style Guide compliant)
+│   ├── main.py                # API server with comprehensive docstrings & type hints
 │   ├── pdf_converter_best.py  # PDF to Markdown converter
 │   ├── rules_manager.py       # Analysis rules management
-│   └── ratio_config_manager.py # Company-specific ratio configuration
+│   ├── ratio_config_manager.py # Company-specific ratio configuration
+│   └── core/                  # Core utilities with full documentation
+│       ├── task_runner.py     # Task management with type hints
+│       ├── config.py          # Configuration constants
+│       └── archive.py         # Archive management
 ├── frontend/                   # React frontend
 │   ├── src/
 │   │   ├── App.jsx           # Main application
@@ -212,10 +244,10 @@ insig_analyst_demo/
 │   │   │   └── RatiosConfiguration.jsx # Company ratio config
 │   │   └── components/        # UI components
 │   └── package.json
-├── src/insig_analyst_demo/         # CrewAI implementation
-│   ├── crew.py                # Dynamic company crew
-│   ├── ratio_calc.py          # Financial ratio calculator
-│   ├── extract_financials.py  # Data extraction
+├── src/insig_analyst_demo/     # CrewAI implementation (Google Style Guide)
+│   ├── crew.py                # Dynamic company crew with type hints
+│   ├── ratio_calc.py          # Financial ratio calculator (30+ metrics)
+│   ├── main.py                # CLI entry point with proper main guard
 │   └── config/
 │       ├── agents.yaml        # Agent configurations
 │       └── tasks.yaml         # Task definitions
@@ -404,17 +436,28 @@ python -c "from src.insig_analyst_demo.crew import InsigAnalystDemo; crew = Insi
 2. **Port already in use**
    ```bash
    # Kill processes using the ports
-   pkill -f "python.*run_app"
+   lsof -ti:8000 | xargs kill -9
+   lsof -ti:5173 | xargs kill -9
+   pkill -f uvicorn
    pkill -f "node|npm|vite"
    # Or use different ports in the configuration
    ```
 
-3. **API key issues**
+3. **Application shuts down immediately after starting**
+   - **Cause**: The `--reload` flag with uvicorn creates a subprocess that exits, causing the script to think the backend stopped
+   - **Solution**: The `run_app.py` script has been updated to:
+     - Run uvicorn without the `--reload` flag
+     - Wait properly for the backend to start (20 second timeout)
+     - Monitor both backend and frontend processes continuously
+     - Handle shutdown gracefully with signal handlers
+   - **Note**: Pydantic deprecation warnings from CrewAI are normal and safe to ignore
+
+4. **API key issues**
    - Verify `.env` file exists in project root
    - Ensure it contains valid `OPENAI_API_KEY`
    - Check there are no extra spaces or quotes in the key
 
-4. **Module not found errors**
+5. **Module not found errors**
    ```bash
    # Always ensure virtual environment is activated
    source .venv/bin/activate  # On macOS/Linux
@@ -422,7 +465,7 @@ python -c "from src.insig_analyst_demo.crew import InsigAnalystDemo; crew = Insi
    uv pip install -r requirements.txt
    ```
 
-5. **Rollup/Vite build errors on macOS**
+6. **Rollup/Vite build errors on macOS**
    If you see `Cannot find module @rollup/rollup-darwin-x64` or code signature issues:
    ```bash
    # Fix by removing and reinstalling frontend dependencies
@@ -432,7 +475,7 @@ python -c "from src.insig_analyst_demo.crew import InsigAnalystDemo; crew = Insi
    cd ..
    ```
 
-6. **Missing or incomplete JSON data**
+7. **Missing or incomplete JSON data**
    - Ensure JSON file contains all required sections:
      - `data.market_data` (share_price, market_cap, etc.)
      - `data.{year}.income_statement`
@@ -440,7 +483,7 @@ python -c "from src.insig_analyst_demo.crew import InsigAnalystDemo; crew = Insi
      - `data.{year}.cash_flow`
    - Check that numeric values are properly formatted
 
-7. **Stuck or "Running" Tasks**
+8. **Stuck or "Running" Tasks**
    If tasks show as perpetually "running" in the dashboard:
    ```bash
    # Clean up stuck tasks via API
@@ -450,18 +493,24 @@ python -c "from src.insig_analyst_demo.crew import InsigAnalystDemo; crew = Insi
    curl -X DELETE http://localhost:8000/api/analysis/clear
    ```
 
-8. **Pydantic deprecation warnings**
+9. **Pydantic deprecation warnings**
    These warnings from the CrewAI library are safe to ignore:
    ```
    PydanticDeprecatedSince20: Using extra keyword arguments...
+   PydanticDeprecatedSince20: Support for class-based `config` is deprecated...
    ```
    They indicate future changes in Pydantic v3 but don't affect functionality.
+
+10. **Frontend shows wrong port**
+    - Vite displays "Local: http://localhost:3000/" but actually runs on port 5173
+    - Access the frontend at: http://localhost:5173
+    - The backend API is at: http://localhost:8000
 
 ### Debug Mode
 
 ```bash
-# Run backend with debug logging
-uvicorn backend.main:app --reload --log-level debug
+# Run backend with debug logging (without --reload)
+uvicorn backend.main:app --host 0.0.0.0 --port 8000 --log-level debug
 
 # Check task status
 curl http://localhost:8000/api/analysis/status/{task_id}
@@ -475,17 +524,64 @@ curl http://localhost:8000/api/analysis/debug
 
 ## Development
 
+### Code Style Guidelines
+
+All Python code follows the Google Python Style Guide:
+
+```python
+def calculate_ratio(numerator: float, denominator: float) -> float:
+    """Calculate a financial ratio.
+    
+    Args:
+        numerator: The top value in the ratio.
+        denominator: The bottom value in the ratio.
+    
+    Returns:
+        The calculated ratio value.
+    
+    Raises:
+        ValueError: If denominator is zero.
+    """
+    if denominator == 0:
+        raise ValueError("Denominator cannot be zero")
+    return numerator / denominator
+```
+
 ### Adding New Financial Ratios
 
 1. Edit `backend/ratio_config_manager.py` to add ratio definition
 2. Update `src/insig_analyst_demo/ratio_calc.py` to implement calculation
 3. Add to `data/ratio_rules.md` to enable for agents
+4. Follow Google Style Guide for all new code
 
 ### Customizing AI Agents
 
 1. Edit `src/insig_analyst_demo/config/agents.yaml` for agent personalities
 2. Modify `src/insig_analyst_demo/config/tasks.yaml` for task definitions
 3. Update `src/insig_analyst_demo/crew.py` for custom logic
+4. Ensure all Python changes include proper docstrings and type hints
+
+### Running Code Quality Checks
+
+```bash
+# Check style compliance
+pylint src/ backend/
+
+# Check type hints
+mypy src/ backend/ --ignore-missing-imports
+
+# Format code (optional)
+black src/ backend/ --line-length 80
+```
+
+## Contributing
+
+When contributing to this project:
+1. Follow the Google Python Style Guide
+2. Add comprehensive docstrings to all new functions/classes
+3. Use type hints for all parameters and returns
+4. Keep line length under 80-100 characters
+5. Test that all existing functionality still works
 
 ## License
 
