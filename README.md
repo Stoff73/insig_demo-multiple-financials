@@ -40,7 +40,7 @@ This codebase follows the **Google Python Style Guide** with:
 ## System Requirements
 
 ### Required Software
-- **Python**: Version 3.10, 3.11, 3.12, or 3.13 (Python 3.14 is not supported by CrewAI)
+- **Python**: Version 3.10, 3.11, or 3.12 (Python 3.13+ is not supported and causes compatibility issues)
 - **Node.js**: Version 16 or higher with npm
 - **Git**: For cloning the repository
 - **Operating System**: macOS, Linux, or Windows
@@ -69,7 +69,7 @@ This codebase follows the **Google Python Style Guide** with:
 
 ### Prerequisites
 
-- Python 3.10-3.13 (3.14 not supported by CrewAI)
+- Python 3.10-3.12 (3.13+ not supported - causes compatibility issues)
 - Node.js 16+ and npm
 - OpenAI API key
 - Git

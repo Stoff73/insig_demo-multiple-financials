@@ -7,8 +7,8 @@ Data Sources: SPI.json
 
 | Metric | Value | Source | Retrieved |
 |--------|-------|--------|----------|
-| **Share Price** | £2.08 | Yahoo Finance | 2025-09-04 12:29:22 |
-| **Market Cap** | £871.1m | Yahoo Finance | 2025-09-04 12:29:22 |
+| **Share Price** | £2.08 | Yahoo Finance | 2025-09-05 09:22:47 |
+| **Market Cap** | £871.1m | Yahoo Finance | 2025-09-05 09:22:47 |
 | **Enterprise Value** | £2109.8m | Calculated | - |
 | **Shares Outstanding** | 0.0m | Financial Reports | - |
 

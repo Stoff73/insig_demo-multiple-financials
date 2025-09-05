@@ -1606,6 +1606,5 @@ async def update_task_with_rule(
     with open(config_path, 'w') as f:
         yaml.dump(tasks_config, f, default_flow_style=False, sort_keys=False)
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host=BACKEND_HOST, port=BACKEND_PORT)
+# Removed if __name__ == "__main__" block to prevent recursive import
+# when running with uvicorn. Use: uvicorn backend.main:app

@@ -1,58 +1,51 @@
-# STV Group PLC - Company Ownership Details and Analysis
+---
+
+# STV Group plc - Ownership Analysis and Summary
+
+| Ownership Aspect           | Details                                                                                  |
+|---------------------------|------------------------------------------------------------------------------------------|
+| **Share Capital**          | 46,722,499 ordinary shares of 50p each in issue (as of 11 March 2025), no treasury shares |
+| **Voting Rights**          | One vote per ordinary share                                                             |
+| **Dividend Policy**        | Final dividend declared: 7.4p per share (payable 30 May 2025)                            |
+|                           | Interim dividend: 3.9p per share                                                        |
+|                           | Total dividend for 2024: 11.3p per share                                               |
+| **Substantial Shareholders** |                                                                                          |
+| Slater Investments        | 9,012,957 shares (19.29%)                                                                |
+| Aberforth Partners        | 3,404,974 shares (7.29%)                                                                 |
+| Janus Henderson Investors | 3,292,394 shares (7.05%)                                                                 |
+| M&G Investments           | 3,130,248 shares (6.70%)                                                                 |
+| Schroder Investment Management | 2,832,121 shares (6.06%)                                                             |
+| Lombard Odier Asset Management | 2,130,595 shares (4.56%)                                                             |
+| Harwood Capital LLP       | 2,006,000 shares (4.29%)                                                                 |
+| Unicorn Asset Management  | 1,960,000 shares (4.20%)                                                                 |
+| Royal London Asset Management | 1,772,872 shares (3.79%)                                                              |
+| Chelverton Asset Management | 1,693,867 shares (3.63%)                                                               |
+| **Directors' Interests**  | Detailed on page 101 of the Annual Report (not included here)                            |
 
 ---
 
-### Company Ownership and Shareholder Structure (As of 11 March 2025)
+## Analysis of Ownership Structure
 
-| Shareholder                  | Shares Held | Percentage Ownership (%) |
-|-----------------------------|-------------|--------------------------|
-| Slater Investments          | 9,012,957   | 19.29                    |
-| Aberforth Partners          | 3,404,974   | 7.29                     |
-| Janus Henderson Investors  | 3,292,394   | 7.05                     |
-| M&G Investments             | 3,130,248   | 6.70                     |
-| Schroder Investment Management | 2,832,121 | 6.06                     |
-| Lombard Odier Asset Management | 2,130,595 | 4.56                     |
-| Harwood Capital LLP         | 2,006,000   | 4.29                     |
-| Unicorn Asset Management    | 1,960,000   | 4.20                     |
-| Royal London Asset Management | 1,772,872 | 3.79                     |
-| Chelverton Asset Management | 1,693,867   | 3.63                     |
+The ownership structure of STV Group plc is characterized by a relatively concentrated shareholder base, with the largest shareholder, Slater Investments, holding a significant 19.29% stake. This level of ownership concentration can provide stability in shareholder voting and strategic direction but may also concentrate influence.
 
-- Total ordinary shares in issue: 46,722,499 (each with one vote)
-- No shares held in treasury
-- Share capital: Ordinary shares of 50p each
-- Dividend policy: Final cash dividend of 7.4p per share declared for 2024, with total dividend for 2024 at 11.3p per share (including interim dividend of 3.9p)
+Several institutional investors hold meaningful stakes ranging from approximately 3.6% to 7.3%, including well-known asset managers such as Aberforth Partners, Janus Henderson Investors, M&G Investments, and Schroder Investment Management. This institutional presence suggests that the company is followed and supported by professional investors, which can be positive for governance and market confidence.
+
+The dividend policy indicates a commitment to returning cash to shareholders, with a total dividend of 11.3p per share declared for 2024, reflecting confidence in cash flow generation despite some financial risks noted in the financial analysis.
+
+The absence of treasury shares means all issued shares are outstanding and entitled to dividends and voting rights, simplifying the ownership picture.
 
 ---
 
-### Directors and Governance
+## Conclusion
 
-- Directors' interests in shares are disclosed on page 101 of the annual report (not included here)
-- The company is registered in Scotland under company number SC203873
-- The Directors' report and Strategic Report form part of the Management Report
-- The company holds an Annual General Meeting (AGM) with resolutions put to shareholders
+STV Group's ownership profile shows a mix of a dominant single shareholder and a broad base of institutional investors, which can provide both stability and professional oversight. The declared dividends align with the company's positive free cash flow and profitability metrics, supporting shareholder returns.
 
----
+However, the financial analysis highlights some risks, including negative equity and interest coverage concerns, which shareholders and potential investors should monitor closely. The ownership structure, with significant institutional holdings, may help in navigating these challenges through active engagement and governance.
 
-### Analysis of Ownership Structure
-
-The ownership structure of STV Group PLC is characterized by a relatively concentrated institutional shareholder base. The largest shareholder, Slater Investments, holds 19.29% of the shares, indicating significant influence but not outright control. Other institutional investors such as Aberforth Partners, Janus Henderson Investors, and M&G Investments hold between 6-7% each, collectively representing a substantial portion of the share capital.
-
-This institutional ownership suggests that the company is under the scrutiny of professional investors who likely demand transparency, governance, and performance. The presence of multiple asset managers with holdings above 3% indicates diversified institutional interest, which can be positive for liquidity and market confidence.
-
-The dividend policy, with a total dividend of 11.3p per share for 2024, reflects a commitment to returning cash to shareholders, which aligns with the positive free cash flow generation noted in the financial analysis.
-
----
-
-### Conclusion
-
-The ownership details of STV Group PLC reveal a shareholder base dominated by institutional investors with significant stakes, providing a stable ownership environment. The dividend policy supports shareholder returns, consistent with the company's positive free cash flow profile.
-
-When combined with the financial analysis, which shows undervaluation in market multiples but concerns around negative equity and interest coverage, the ownership structure suggests that the company is likely to be under active monitoring by its major shareholders. These investors may push for operational improvements and balance sheet strengthening to unlock value.
-
-Overall, STV Group PLC's ownership profile complements its financial position, indicating potential for value realization if the company addresses its financial risks while maintaining its operational strengths.
+No additional ownership-related documents appear necessary based on the information provided. For a complete view of directors' shareholdings, page 101 of the Annual Report should be consulted.
 
 ---
 
 Victoria Clarke  
 Financial Modeling & Valuation Expert  
-2025-09-04 11:18:00
+2025-09-05 13:37:18

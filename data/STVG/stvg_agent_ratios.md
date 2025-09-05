@@ -7,8 +7,8 @@ Data Source: xp-power.md (H1 2025 Results)
 
 | Metric | Value | Source | Retrieved |
 |--------|-------|--------|----------|
-| **Share Price** | £1.25 | Yahoo Finance | 2025-09-04 11:18:00 |
-| **Market Cap** | £56.9m | Yahoo Finance | 2025-09-04 11:18:00 |
+| **Share Price** | £1.25 | Yahoo Finance | 2025-09-05 13:37:18 |
+| **Market Cap** | £56.9m | Yahoo Finance | 2025-09-05 13:37:18 |
 | **Enterprise Value** | £113.0m | Calculated | - |
 | **Shares Outstanding** | 0.0m | Financial Reports | - |
 
