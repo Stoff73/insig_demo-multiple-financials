@@ -1,108 +1,86 @@
 ---
 
-### Table 1: Key Financial Ratios Used in Analysis (from data/STVG/STVG_agent_ratios.md)
+### Table 1: Key Financial Ratios for STV Group (from data/STVG/STVG_agent_ratios.md)
 
-| Category           | Ratio                     | Value      | Threshold (Pass/Monitor/Fail) | Outcome  |
-|--------------------|---------------------------|------------|-------------------------------|----------|
-| **Valuation Ratios**| P/E Ratio                 | 2.6x       | <10.0 / 10.0-15.0 / >15.0     | PASS     |
-|                    | EV/EBITDA                 | 5.9x       | <5.0 / 5.0-7.5 / >7.5         | MONITOR  |
-|                    | EV/EBIT                   | 5.9x       | <7.0 / 7.0-10.0 / >10.0       | PASS     |
-|                    | EV/Revenue                | 0.3x       | >1.0 / 2.0-1.0 / <2.0         | FAIL     |
-|                    | Price to FCF              | 3.9x       | >15.0 / 30.0-15.0 / <30.0     | FAIL     |
-|                    | FCF Yield                 | 25.7%      | >10.0 / 6.0-10.0 / <6.0       | PASS     |
-| **Profitability**   | Gross Margin              | 45.6%      | >40.0 / 30.0-40.0 / <30.0     | PASS     |
-|                    | Operating Margin          | 8.9%       | >15.0 / 5.0-15.0 / <5.0       | MONITOR  |
-|                    | Net Margin                | 5.7%       | >5.0 / 0.0-5.0 / <0.0         | PASS     |
-|                    | ROE                       | -167.4%    | >10.0 / 0.0-10.0 / <0.0       | FAIL     |
-|                    | ROCE                      | 17.4%      | >15.0 / 8.0-15.0 / <8.0       | PASS     |
-| **Liquidity**       | Current Ratio             | 1.5x       | >1.5 / 1.0-1.5 / <1.0         | MONITOR  |
-|                    | Quick Ratio               | 1.0x       | >1.0 / 0.5-1.0 / <0.5         | PASS     |
-| **Leverage**        | Debt-to-Equity            | -5.2       | <0.5 / 0.5-1.0 / >1.0         | PASS     |
-|                    | Interest Coverage         | 1.5x       | >4.0 / 2.0-4.0 / <2.0         | FAIL     |
-|                    | Net Debt/EBITDA           | 2.9x       | <2.5 / 2.5-3.5 / >3.5         | MONITOR  |
-| **Efficiency**      | Inventory Turnover        | 7.1x       | >4.0 / 2.0-4.0 / <2.0         | PASS     |
-|                    | Days Sales Outstanding    | 16 days    | <60.0 / 60.0-90.0 / >90.0     | PASS     |
-| **Earnings Quality**| Accruals Ratio            | 2.5%       | <10.0 / 10.0-20.0 / >20.0     | PASS     |
-|                    | EBITDA to FCF Conversion  | 76.0%      | >70.0 / 40.0-70.0 / <40.0     | PASS     |
-|                    | Adjusted vs Statutory Gap | 0.0%       | <10.0 / 10.0-20.0 / >20.0     | PASS     |
-| **Asset Quality**   | Goodwill/Assets           | 12.0%      | <30.0 / 30.0-50.0 / >50.0     | PASS     |
-|                    | Capex/Depreciation        | 0.0x       | 0.8-1.2 / <0.8 or >1.2 / >1.5 | MONITOR  |
-|                    | Tangible Book Value       | -£33.2m    | >50.0 / 0.0-50.0 / <0.0       | FAIL     |
-| **Cash Flow**       | Cash Conversion           | 0.8x       | >1.0 / 0.8-1.0 / <0.8         | MONITOR  |
-|                    | Free Cash Flow            | £7.3m      | >0.0 / 5.0-0.0 / <5.0         | PASS     |
+| Ratio Category       | Ratio                     | Value     | Threshold (Pass/Monitor/Fail) | Outcome  |
+|----------------------|---------------------------|-----------|-------------------------------|----------|
+| **Valuation Ratios** | P/E Ratio                 | 2.6x      | <10.0 / 10.0-15.0 / >15.0     | PASS     |
+|                      | EV/EBITDA                 | 5.9x      | <5.0 / 5.0-7.5 / >7.5         | MONITOR  |
+|                      | EV/EBIT                   | 5.9x      | <7.0 / 7.0-10.0 / >10.0       | PASS     |
+|                      | EV/Revenue                | 0.3x      | >1.0 / 2.0-1.0 / <2.0         | FAIL     |
+|                      | Price to FCF              | 3.9x      | >15.0 / 30.0-15.0 / <30.0     | FAIL     |
+|                      | FCF Yield                 | 25.7%     | >10.0 / 6.0-10.0 / <6.0       | PASS     |
+| **Profitability**     | Gross Margin              | 45.6%     | >40.0 / 30.0-40.0 / <30.0     | PASS     |
+|                      | Operating Margin          | 8.9%      | >15.0 / 5.0-15.0 / <5.0       | MONITOR  |
+|                      | Net Margin                | 5.7%      | >5.0 / 0.0-5.0 / <0.0         | PASS     |
+|                      | ROE                       | -167.4%   | >10.0 / 0.0-10.0 / <0.0       | FAIL     |
+|                      | ROCE                      | 17.4%     | >15.0 / 8.0-15.0 / <8.0       | PASS     |
+| **Liquidity**         | Current Ratio             | 1.5x      | >1.5 / 1.0-1.5 / <1.0         | MONITOR  |
+|                      | Quick Ratio               | 1.0x      | >1.0 / 0.5-1.0 / <0.5         | PASS     |
+| **Leverage**          | Debt-to-Equity            | -5.2      | <0.5 / 0.5-1.0 / >1.0         | PASS     |
+|                      | Interest Coverage         | 1.5x      | >4.0 / 2.0-4.0 / <2.0         | FAIL     |
+|                      | Net Debt/EBITDA           | 2.9x      | <2.5 / 2.5-3.5 / >3.5         | MONITOR  |
+| **Efficiency**        | Inventory Turnover        | 7.1x      | >4.0 / 2.0-4.0 / <2.0         | PASS     |
+|                      | Days Sales Outstanding    | 16 days   | <60.0 / 60.0-90.0 / >90.0     | PASS     |
+| **Earnings Quality**  | Accruals Ratio            | 2.5%      | <10.0 / 10.0-20.0 / >20.0     | PASS     |
+|                      | EBITDA to FCF Conversion  | 76.0%     | >70.0 / 40.0-70.0 / <40.0     | PASS     |
+|                      | Adjusted vs Statutory Gap | 0.0%      | <10.0 / 10.0-20.0 / >20.0     | PASS     |
+| **Asset Quality**     | Goodwill/Assets           | 12.0%     | <30.0 / 30.0-50.0 / >50.0     | PASS     |
+|                      | Capex/Depreciation        | 0.0       | 0.8-1.2 / <0.8 or >1.2 / >1.5 | MONITOR  |
+|                      | Tangible Book Value       | -£33.2m   | >50.0 / 0.0-50.0 / <0.0       | FAIL     |
+| **Cash Flow**         | Cash Conversion           | 0.8       | >1.0 / 0.8-1.0 / <0.8         | MONITOR  |
+|                      | Free Cash Flow            | £7.3m     | >0.0 / 5.0-0.0 / <5.0         | PASS     |
 
 ---
 
-### Table 2: Key Financial Information Used in Analysis (from Income Statement, Cash Flow, and Balance Sheet)
+### Table 2: Key Financial Statement Data for STV Group (2024, from data/STVG folder)
 
-| Metric                          | 2024 (£m) | 2023 (£m) | Notes/Comments                          |
-|--------------------------------|-----------|-----------|---------------------------------------|
-| **Income Statement**            |           |           |                                       |
-| Revenue                        | 188.0     | 168.4     | Adjusted results                      |
-| Operating Profit               | 16.7      | 12.4      | Adjusted results                      |
-| Profit Before Tax              | 13.2      | 9.3       | Adjusted results                      |
-| Profit for the Year            | 15.6      | 13.8      | Adjusted results                      |
-| Basic EPS (pence)              | 23.5p     | 9.7p      | Statutory EPS                        |
-| **Cash Flow Statement**         |           |           |                                       |
-| Net Cash Generated by Operations| 8.7       | 3.8       | Group                                |
-| Net Cash Used in Investing Activities | (6.9) | (13.9)   | Group                                |
-| Net Cash from Financing Activities | 0.0    | 8.1       | Group                                |
-| Net Increase in Cash & Equivalents | 1.8    | (2.0)     | Group                                |
-| Free Cash Flow (from ratios)   | 7.3       | -         | From agent ratios                    |
-| **Balance Sheet**               |           |           |                                       |
-| Total Assets                  | 169.7     | 153.9     | Group                                |
-| Shareholders' Equity          | (1.9)     | (7.5)     | Group (negative equity)              |
-| Non-controlling Interests     | (11.0)    | (5.1)     | Group                                |
-| Total Equity                 | (12.9)    | (12.6)    | Group (negative)                     |
-| Borrowings (Non-current + Current) | 49.8  | 46.2      | Group                                |
-| Lease Liabilities             | 17.4      | 19.1      | Group                                |
-| Retirement Benefit Obligations | 48.3     | 54.8      | Group                                |
-| Inventories                  | 28.8      | 24.4      | Group                                |
-| Trade and Other Receivables  | 48.5      | 39.9      | Group                                |
-| Cash and Cash Equivalents    | 11.1      | 13.9      | Group                                |
+| Statement           | Line Item                      | 2024 Value (£m) | 2023 Value (£m) |
+|---------------------|--------------------------------|-----------------|-----------------|
+| **Income Statement** | Revenue                       | 188.0           | 168.4           |
+|                     | Operating Profit (Adjusted)   | 16.7            | 12.4            |
+|                     | Profit Before Tax (Adjusted)  | 13.2            | 9.3             |
+|                     | Profit for the Year (Adjusted)| 15.6            | 13.8            |
+|                     | Basic EPS (pence)             | 23.5p           | 9.7p            |
+| **Cash Flow**        | Net Cash from Operations      | 8.7             | 3.8             |
+|                     | Net Cash from Investing       | (6.9)           | (13.9)          |
+|                     | Net Cash from Financing       | 0.0             | 8.1             |
+|                     | Net Increase in Cash          | 1.8             | (2.0)           |
+|                     | Free Cash Flow (from ratios)  | 7.3             | -               |
+| **Balance Sheet**    | Total Assets                  | 169.7           | 153.9           |
+|                     | Total Equity                  | (12.9)          | (12.6)          |
+|                     | Net Debt (Borrowings - Cash) | 38.7 (49.8-11.1)| 32.9 (46.2-13.9)|
+|                     | Intangible Assets             | 36.5            | 25.0            |
+|                     | Inventories                  | 28.8            | 24.4            |
+|                     | Trade and Other Receivables  | 48.5 (48.0+0.5) | 39.9 (38.9+1.0) |
+|                     | Trade and Other Payables     | 63.3 (48.1+15.2)| 43.8 (37.9+5.9) |
 
 ---
 
 ### Analysis Summary
 
-**Valuation Ratios:**  
-STV Group's P/E ratio of 2.6x is very low, indicating the stock is trading at a significant discount relative to earnings, which is a positive sign for value investors (PASS). EV/EBITDA and EV/EBIT multiples are moderate (5.9x), with EV/EBITDA flagged as MONITOR, suggesting valuation is reasonable but not deeply undervalued. However, EV/Revenue at 0.3x and Price to Free Cash Flow at 3.9x are low, flagged as FAIL, indicating the market values the company at a low multiple of sales and cash flow, possibly reflecting concerns about growth or risk. The Free Cash Flow Yield of 25.7% is strong (PASS), indicating good cash generation relative to market cap.
+STV Group shows strong revenue growth from £168.4m in 2023 to £188.0m in 2024, reflecting positive top-line momentum. Operating profit improved significantly to £16.7m, with an operating margin of 8.9%, which is moderate but flagged as "Monitor" indicating room for margin expansion. The net margin of 5.7% is a pass, showing profitability at the bottom line.
 
-**Profitability:**  
-Gross margin is healthy at 45.6% (PASS), showing good control over cost of goods sold. Operating margin at 8.9% is moderate and flagged as MONITOR, indicating room for improvement in operational efficiency. Net margin at 5.7% is positive and passes the threshold. However, the Return on Equity (ROE) is deeply negative at -167.4%, failing due to negative equity, which is a significant red flag. Return on Capital Employed (ROCE) is strong at 17.4% (PASS), indicating the company generates good returns on its capital base excluding equity distortions.
+Valuation multiples such as P/E at 2.6x and EV/EBIT at 5.9x suggest the stock is trading at a low valuation relative to earnings, which is a positive sign for value investors. However, the EV/Revenue multiple is very low at 0.3x, flagged as a fail, indicating the market may be undervaluing the revenue base or there may be concerns about quality or growth sustainability.
 
-**Liquidity:**  
-Current ratio at 1.5x is borderline MONITOR, suggesting the company has just enough current assets to cover current liabilities. Quick ratio at 1.0x passes, indicating sufficient liquid assets excluding inventory.
+Profitability metrics are mixed: while gross margin is strong at 45.6%, ROE is deeply negative at -167.4%, reflecting the negative equity base (-£12.9m total equity). This negative equity is a concern and is confirmed by the tangible book value being negative (-£33.2m), which is a fail. The negative equity likely arises from accumulated losses (£316m) despite positive earnings in 2024, indicating historical challenges.
 
-**Leverage:**  
-Debt-to-equity is negative (-5.2) due to negative equity, which is unusual but flagged as PASS, possibly reflecting net cash or accounting peculiarities. Interest coverage at 1.5x fails, indicating the company struggles to cover interest expenses comfortably, a risk factor. Net Debt/EBITDA at 2.9x is in the MONITOR range, showing moderate leverage.
+Liquidity ratios are adequate with a current ratio of 1.5x (Monitor) and quick ratio of 1.0x (Pass), suggesting the company can meet short-term obligations but should be watched. Leverage is low with a negative debt-to-equity ratio (due to negative equity), but interest coverage is weak at 1.5x (Fail), indicating limited buffer to cover interest expenses.
 
-**Efficiency:**  
-Inventory turnover at 7.1x and days sales outstanding at 16 days are strong (PASS), indicating efficient inventory management and quick collection of receivables.
+Efficiency ratios are strong, with inventory turnover at 7.1x and days sales outstanding at 16 days, both passing comfortably, indicating good working capital management.
 
-**Earnings Quality:**  
-Accruals ratio at 2.5%, EBITDA to FCF conversion at 76%, and zero gap between adjusted and statutory earnings all pass, indicating high quality and reliability of earnings.
+Cash flow quality is solid with EBITDA to FCF conversion at 76%, free cash flow positive at £7.3m, and a strong FCF yield of 25.7%, all positive indicators of cash generation.
 
-**Asset Quality:**  
-Goodwill to assets ratio at 12% is low and passes, indicating limited goodwill risk. Capex to depreciation is 0.0, flagged as MONITOR, suggesting low reinvestment which may impact future asset base. Tangible book value is negative at -£33.2m, failing, reflecting accumulated losses and negative equity.
-
-**Cash Flow:**  
-Cash conversion ratio at 0.8 is MONITOR, indicating cash flow from operations is slightly less than EBITDA, but free cash flow is positive at £7.3m (PASS), supporting financial flexibility.
+In summary, STV Group is generating improving earnings and cash flow with attractive valuation multiples. However, the negative equity and weak interest coverage highlight financial risk. The company appears undervalued on earnings and cash flow but carries balance sheet concerns that warrant monitoring. The operational performance is improving, but the capital structure and historical losses weigh on the valuation.
 
 ---
 
 ### Conclusion
 
-STV Group presents a mixed financial profile. The company is trading at very low valuation multiples, with strong free cash flow yield and solid profitability margins. Operational efficiency and earnings quality are good, and liquidity is adequate. However, the company suffers from negative equity and a deeply negative ROE, which is a significant concern. Interest coverage is weak, indicating potential risk servicing debt. The negative tangible book value and moderate leverage suggest financial risk, although the company generates good returns on capital employed.
-
-Overall, STV Group appears undervalued based on earnings and cash flow metrics but carries financial risks related to capital structure and interest coverage. Investors should monitor leverage and equity position closely. The company’s strong cash flow and operational margins provide a foundation for potential recovery or value realization, but the negative equity and interest coverage issues warrant caution.
-
----
-
-If further detailed segmental data, management guidance, or forward-looking projections are needed, those are not available in the provided files.
+STV Group currently trades at low valuation multiples with improving profitability and strong cash flow generation, indicating potential undervaluation. However, the negative equity position and weak interest coverage pose financial risks that investors should monitor closely. The company’s operational efficiency and cash flow quality are strengths, but balance sheet weakness tempers the outlook. Overall, STV Group appears undervalued based on fundamentals but with notable financial risk factors.
 
 ---
 
 Victoria Clarke  
 Financial Modeling & Valuation Expert  
-2025-09-05 13:37:18
+2025-09-08 11:57:20
